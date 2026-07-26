@@ -1,3 +1,7 @@
+# Project Context
+# Before making changes, read `.agents/docs/ARCHITECTURE.md` for stack, routes, and data flow.
+# See also `.agents/docs/PUBLIC_EXPOSURE.md` (what is browser-visible) and `.agents/docs/KNOWN_ISSUES.md`.
+
 # Notification Rule
 # At the very end of EVERY task (both long and short), you MUST run the following command to notify the user that you are finished:
 # `powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File .agents\hooks\notify.ps1 complete`

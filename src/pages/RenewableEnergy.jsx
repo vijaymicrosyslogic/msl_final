@@ -1,6 +1,6 @@
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import React, { useEffect, useRef } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 
 const RenewableEnergy = () => {
   const { productId } = useParams();
+  const { key } = useLocation();
 
   // Refs for scrolling
   const solarRef = useRef(null);
@@ -19,7 +20,7 @@ const RenewableEnergy = () => {
     } else {
       window.scrollTo(0, 0);
     }
-  }, [productId]);
+  }, [productId, key]);
 
   return (
     <>

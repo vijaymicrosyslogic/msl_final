@@ -1,6 +1,6 @@
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import React, { useEffect, useRef } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 
 const Customization = () => {
   const { productId } = useParams();
+  const { key } = useLocation();
 
   // Refs for scrolling
   const faceRef = useRef(null);
@@ -34,7 +35,7 @@ const Customization = () => {
     } else {
       window.scrollTo(0, 0);
     }
-  }, [productId]);
+  }, [productId, key]);
 
   return (
     <>
@@ -405,7 +406,7 @@ const Customization = () => {
               <div style={{ padding: 'clamp(15px, 5vw, 50.0px) clamp(15px, 5vw, 40.0px)', background: '#fff' }}>
                 <div className="row g-5 align-items-center">
                   <div className="col-lg-5 order-2 order-lg-1">
-                    <div style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', background: '#f8fafc', border: '1px solid #e2e8f0', padding: 'clamp(10px, 3vw, 20.0px)', display: 'flex', alignItems: 'center', justifyContent: 'center' , flexWrap: 'wrap'}}>
+                    <div style={{ position: 'relative', overflow: 'hidden', boxShadow: 'none', background: 'transparent', border: 'none', padding: 'clamp(10px, 3vw, 20.0px)', display: 'flex', alignItems: 'center', justifyContent: 'center' , flexWrap: 'wrap'}}>
                       <img src="/assets/img/ai/face_analytics_soc.webp" alt="Broadcom SoC Platform" className="product-hover-zoom" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
                     </div>
                   </div>

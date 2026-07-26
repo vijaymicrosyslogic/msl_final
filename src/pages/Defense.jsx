@@ -1,6 +1,6 @@
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import React, { useEffect, useRef } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -16,6 +16,7 @@ const aiZoneSliderImg = '/assets/img/slider/defence/ai_zone.png';
 
 const Defense = () => {
   const { productId } = useParams();
+  const { key } = useLocation();
 
   // Refs for scrolling
   const t90Ref = useRef(null);
@@ -45,7 +46,7 @@ const Defense = () => {
     }, 150);
 
     return () => clearTimeout(timer);
-  }, [productId]);
+  }, [productId, key]);
 
   return (
     <>
@@ -446,10 +447,6 @@ const Defense = () => {
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' , flexWrap: 'wrap'}}>
                           <i className="bx bx-shield-quarter" style={{ fontSize: 'clamp(18px, 4vw, 36.0px)', color: '#0E47A1', marginBottom: '10px' }}></i>
                           <p style={{ fontSize: '11px', color: '#1A2A4A', fontWeight: '600', lineHeight: '1.4' }}>Secure packetized data transmission</p>
-                        </div>
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' , flexWrap: 'wrap'}}>
-                          <i className="bx bx-camera" style={{ fontSize: 'clamp(18px, 4vw, 36.0px)', color: '#0E47A1', marginBottom: '10px' }}></i>
-                          <p style={{ fontSize: '11px', color: '#1A2A4A', fontWeight: '600', lineHeight: '1.4' }}>Camera-assisted automatic collision avoidance (upcoming feature)</p>
                         </div>
                       </div>
                     </div>

@@ -1,6 +1,6 @@
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import React, { useEffect, useRef } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 
 const AiSolutions = () => {
   const { productId } = useParams();
+  const { key } = useLocation();
 
   // Refs for scrolling
   const surveillanceRef = useRef(null);
@@ -26,7 +27,7 @@ const AiSolutions = () => {
     } else {
       window.scrollTo(0, 0);
     }
-  }, [productId]);
+  }, [productId, key]);
 
   return (
     <>
@@ -760,8 +761,6 @@ const AiSolutions = () => {
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                       {[
                         { icon: 'bx-shield', text: 'Defence & Gov' },
-                        { icon: 'bx-chip', text: 'Hardware Mfg' },
-                        { icon: 'bx-network-chart', text: 'Systems Integrators' },
                         { icon: 'bx-code-block', text: 'IT Vendors' },
                         { icon: 'bx-building', text: 'Infrastructure' }
                       ].map((aud, idx) => (

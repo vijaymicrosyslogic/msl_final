@@ -51,15 +51,15 @@ const About = () => {
             <h2 style={{ color: '#1a2744', fontSize: '24px' }}>Who We Are</h2>
             <p>A Lean, Focused Engineering Team</p>
             <p style={{ color: '#4b5563', maxWidth: '700px', margin: '15px auto 0', fontSize: '15px' }}>
-              We operate as a tight-knit organization of 13 engineers, enabling us to move fast, stay aligned, and deliver with exceptional quality on every engagement.
+              We operate as a tight-knit organization of engineers, enabling us to move fast, stay aligned, and deliver with exceptional quality on every engagement.
             </p>
           </div>
           <div className="row mt-5">
             <div className="col-lg-4 col-md-6">
               <div className="count-box">
                 <i className="bx bx-group"></i>
-                <span className="purecounter">13</span>
-                <p>Specialized engineers across hardware, software, and AI domains</p>
+                <span className="purecounter">200+</span>
+                <p>Projects Delivered</p>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 mt-5 mt-md-0">

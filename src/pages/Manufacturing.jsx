@@ -1,6 +1,6 @@
 import PageBreadcrumb from '../components/PageBreadcrumb';
 import React, { useEffect, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -10,6 +10,7 @@ import SafeLoadAntiLeakage from '../components/SafeLoadAntiLeakage';
 
 const Manufacturing = () => {
   const { productId } = useParams();
+  const { key } = useLocation();
   
   // Refs for scrolling
   const iotRef = useRef(null);
@@ -34,7 +35,7 @@ const Manufacturing = () => {
     };
 
     scrollToSection();
-  }, [productId]);
+  }, [productId, key]);
 
   return (
     <>
