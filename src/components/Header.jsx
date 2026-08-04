@@ -45,7 +45,7 @@ const Header = () => {
             <Link to="/about">About us</Link>
 
             <div className={`nav-dropdown ${openDropdown === 'defense' ? 'mobile-expanded' : ''}`}>
-              <Link to="/products/defense" onClick={(e) => { if(window.innerWidth <= 991) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'defense' ? null : 'defense'); } }}>Defense <i className="bi bi-chevron-down ch-icon"></i></Link>
+              <Link to="/products/defense" onClick={(e) => { if(window.innerWidth <= 1199) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'defense' ? null : 'defense'); } }}>Defense <i className="bi bi-chevron-down ch-icon"></i></Link>
               <div className="nav-dropdown-menu">
 
                 <Link to="/products/defense/t90"><i className="bi bi-broadcast"></i> T90’s V2V RF Comm. & Automation</Link>
@@ -58,7 +58,7 @@ const Header = () => {
             </div>
 
             <div className={`nav-dropdown ${openDropdown === 'ai' ? 'mobile-expanded' : ''}`}>
-              <Link to="/products/ai" onClick={(e) => { if(window.innerWidth <= 991) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'ai' ? null : 'ai'); } }}>AI <i className="bi bi-chevron-down ch-icon"></i></Link>
+              <Link to="/products/ai" onClick={(e) => { if(window.innerWidth <= 1199) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'ai' ? null : 'ai'); } }}>AI <i className="bi bi-chevron-down ch-icon"></i></Link>
               <div className="nav-dropdown-menu">
                 <Link to="/products/ai/surveillance"><i className="bi bi-camera-video"></i> AI High Security Surveillance</Link>
                 <Link to="/products/ai/traffic"><i className="bi bi-stoplights"></i> AI High Traffic Signaling System</Link>
@@ -67,14 +67,14 @@ const Header = () => {
             </div>
 
             <div className={`nav-dropdown ${openDropdown === 'renewable' ? 'mobile-expanded' : ''}`}>
-              <Link to="/products/renewable" onClick={(e) => { if(window.innerWidth <= 991) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'renewable' ? null : 'renewable'); } }}>Renewable Energy <i className="bi bi-chevron-down ch-icon"></i></Link>
+              <Link to="/products/renewable" onClick={(e) => { if(window.innerWidth <= 1199) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'renewable' ? null : 'renewable'); } }}>Renewable Energy <i className="bi bi-chevron-down ch-icon"></i></Link>
               <div className="nav-dropdown-menu">
                 <Link to="/products/renewable/solar"><i className="bi bi-brightness-high"></i> Smart Solar Energy Systems</Link>
               </div>
             </div>
 
             <div className={`nav-dropdown ${openDropdown === 'hospitals' ? 'mobile-expanded' : ''}`}>
-              <Link to="/products/hospitals" onClick={(e) => { if(window.innerWidth <= 991) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'hospitals' ? null : 'hospitals'); } }}>Smart Hospitals <i className="bi bi-chevron-down ch-icon"></i></Link>
+              <Link to="/products/hospitals" onClick={(e) => { if(window.innerWidth <= 1199) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'hospitals' ? null : 'hospitals'); } }}>Smart Hospitals <i className="bi bi-chevron-down ch-icon"></i></Link>
               <div className="nav-dropdown-menu">
                 <Link to="/products/hospitals/automation"><i className="bi bi-hospital"></i> Smart Hospital IOT Automation & Monitoring System</Link>
                 <Link to="/products/hospitals/locker"><i className="bi bi-shield-lock"></i> AI Secured Locker Systems for Drugs</Link>
@@ -84,7 +84,7 @@ const Header = () => {
             </div>
 
             <div className={`nav-dropdown ${openDropdown === 'manufacturing' ? 'mobile-expanded' : ''}`}>
-              <Link to="/products/manufacturing" onClick={(e) => { if(window.innerWidth <= 991) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'manufacturing' ? null : 'manufacturing'); } }}>Manufacturing Automations <i className="bi bi-chevron-down ch-icon"></i></Link>
+              <Link to="/products/manufacturing" onClick={(e) => { if(window.innerWidth <= 1199) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'manufacturing' ? null : 'manufacturing'); } }}>Manufacturing Automations <i className="bi bi-chevron-down ch-icon"></i></Link>
               <div className="nav-dropdown-menu">
                 <Link to="/products/manufacturing/iot"><i className="bi bi-cpu"></i> Industrial IOT</Link>
                 <Link to="/products/manufacturing/mining"><i className="bi bi-shield-fill-exclamation"></i> Safety Mining</Link>
@@ -93,7 +93,7 @@ const Header = () => {
             </div>
 
             <div className={`nav-dropdown ${openDropdown === 'customization' ? 'mobile-expanded' : ''}`}>
-              <Link to="/products/customization" onClick={(e) => { if(window.innerWidth <= 991) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'customization' ? null : 'customization'); } }}>Customization <i className="bi bi-chevron-down ch-icon"></i></Link>
+              <Link to="/products/customization" onClick={(e) => { if(window.innerWidth <= 1199) { e.preventDefault(); e.stopPropagation(); setOpenDropdown(openDropdown === 'customization' ? null : 'customization'); } }}>Customization <i className="bi bi-chevron-down ch-icon"></i></Link>
               <div className="nav-dropdown-menu">
                 <Link to="/products/customization/face"><i className="bi bi-person-bounding-box"></i> Face Analytics on Broadcom Soc Platform</Link>
                 <Link to="/products/customization/drone"><i className="bi bi-bullseye"></i> Onboard Vehicle Detection for Drones</Link>
@@ -128,7 +128,7 @@ const Header = () => {
           </div>
           
           <button 
-            className="mobile-menu-toggle d-lg-none" 
+            className="mobile-menu-toggle d-xl-none" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Mobile Menu"
           >

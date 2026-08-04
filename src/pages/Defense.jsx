@@ -1442,7 +1442,7 @@ const Defense = () => {
         {/* =========================================
             CTA SECTION
         ========================================= */}
-        <section id="contact" style={{ padding: 'clamp(15px, 5vw, 60.0px) 0', background: '#ffffff' }}>
+        <section id="contact" style={{ padding: '0 0 clamp(15px, 5vw, 60.0px) 0', background: '#ffffff' }}>
           <div className="container" data-aos="fade-up">
             <div style={{ background: '#1a2a4a', padding: 'clamp(15px, 5vw, 80.0px) clamp(15px, 5vw, 40.0px)', borderRadius: '24px', textAlign: 'center' }}>
               <h3 style={{ color: '#ffffff', fontSize: 'clamp(18px, 4vw, 36.0px)', fontWeight: '800', marginBottom: '20px', textTransform: 'none' }}>Ready to Modernize Your Operations?</h3>

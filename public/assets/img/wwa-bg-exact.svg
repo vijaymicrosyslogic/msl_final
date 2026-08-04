@@ -1,0 +1,49 @@
+<svg width="1920" height="800" viewBox="0 0 1920 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .circuit { stroke: #e2e8f0; stroke-width: 1.5; fill: none; }
+      .circuit-dot { fill: #e2e8f0; }
+      .globe-line { stroke: #cbd5e1; stroke-width: 2.5; stroke-dasharray: 0 8; stroke-linecap: round; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Left Circuit Board Pattern -->
+  <g class="circuit" transform="translate(-100, -50) scale(1.4)">
+    <path d="M0,200 L150,200 L200,250 L400,250 L450,300 L600,300" />
+    <circle cx="150" cy="200" r="4" class="circuit-dot" />
+    <circle cx="400" cy="250" r="4" class="circuit-dot" />
+    <circle cx="600" cy="300" r="6" class="circuit-dot" />
+
+    <path d="M0,400 L200,400 L250,450 L350,450 L400,400 L500,400" />
+    <circle cx="200" cy="400" r="4" class="circuit-dot" />
+    <circle cx="350" cy="450" r="4" class="circuit-dot" />
+    <circle cx="500" cy="400" r="6" class="circuit-dot" />
+
+    <path d="M50,100 L200,100 L250,150 L300,150" />
+    <circle cx="200" cy="100" r="4" class="circuit-dot" />
+    <circle cx="300" cy="150" r="6" class="circuit-dot" />
+    
+    <path d="M100,300 L150,350 L250,350 L300,400" />
+    <circle cx="150" cy="350" r="3" class="circuit-dot" />
+    <circle cx="250" cy="350" r="3" class="circuit-dot" />
+
+    <circle cx="250" cy="300" r="2.5" class="circuit-dot" />
+    <circle cx="350" cy="200" r="2.5" class="circuit-dot" />
+    <circle cx="450" cy="150" r="2.5" class="circuit-dot" />
+  </g>
+
+  <!-- Right Globe Wireframe -->
+  <g transform="translate(1600, 300) scale(1.1)">
+    <circle cx="0" cy="0" r="300" class="globe-line" />
+    
+    <ellipse cx="0" cy="0" rx="300" ry="240" class="globe-line" />
+    <ellipse cx="0" cy="0" rx="300" ry="180" class="globe-line" />
+    <ellipse cx="0" cy="0" rx="300" ry="120" class="globe-line" />
+    <ellipse cx="0" cy="0" rx="300" ry="60" class="globe-line" />
+    
+    <ellipse cx="0" cy="0" rx="240" ry="300" class="globe-line" />
+    <ellipse cx="0" cy="0" rx="180" ry="300" class="globe-line" />
+    <ellipse cx="0" cy="0" rx="120" ry="300" class="globe-line" />
+    <ellipse cx="0" cy="0" rx="60" ry="300" class="globe-line" />
+  </g>
+</svg>

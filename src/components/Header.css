@@ -295,7 +295,7 @@
   padding: 5px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .desktop-only {
     display: none !important;
   }

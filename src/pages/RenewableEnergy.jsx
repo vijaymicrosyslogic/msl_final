@@ -230,7 +230,7 @@ const RenewableEnergy = () => {
         {/* =========================================
             CTA SECTION & WHY CHOOSE US
         ========================================= */}
-        <section id="contact" style={{ padding: 'clamp(15px, 5vw, 40.0px) 0 clamp(15px, 5vw, 80.0px) 0', background: '#f8fafc' }}>
+        <section id="contact" style={{ padding: '0 0 clamp(15px, 5vw, 80.0px) 0', background: '#f8fafc' }}>
           <div className="container" data-aos="fade-up">
             <div className="row g-0 align-items-stretch" style={{ background: '#1a2a4a', borderRadius: '30px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(26,42,74,0.15)' }}>
               
