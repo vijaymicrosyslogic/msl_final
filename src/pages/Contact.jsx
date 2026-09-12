@@ -23,7 +23,7 @@ const Contact = () => {
     setStatus('');
 
     const submitData = new FormData();
-    submitData.append("access_key", "832a16fa-fc9a-43bb-935c-ba69c49425d9");
+    submitData.append("access_key", "1cf55f96-bdd6-445b-baf8-54628baf49dd");
     submitData.append("name", formData.name);
     submitData.append("email", formData.email);
     submitData.append("phone", formData.phone);
@@ -39,13 +39,16 @@ const Contact = () => {
 
       const data = await response.json();
       if (data.success) {
-        setStatus('Thanks for contacting us, we will reply soon!');
+        setStatus('success');
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); // clear form
+        setTimeout(() => setStatus(''), 10000);
       } else {
-        setStatus('An error occurred. Please try again later.');
+        setStatus('error');
+        setTimeout(() => setStatus(''), 10000);
       }
     } catch (error) {
-      setStatus('An error occurred. Please try again later.');
+      setStatus('error');
+      setTimeout(() => setStatus(''), 10000);
       console.error("Error submitting form: ", error);
     } finally {
       setIsSubmitting(false);
@@ -156,22 +159,18 @@ const Contact = () => {
             box-shadow: none;
           }
 
-          .status-message {
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            text-align: center;
-            font-weight: 600;
+          .btn-submit.btn-success-state {
+            background: #16a34a !important;
+            color: #ffffff;
+            cursor: default;
+            transform: none !important;
+            box-shadow: 0 5px 15px rgba(22,163,74,0.3) !important;
           }
-          .status-success {
-            background: #dcfce7;
-            color: #166534;
-            border: 1px solid #bbf7d0;
-          }
-          .status-error {
-            background: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #fecaca;
+          .btn-submit.btn-error-state {
+            background: #dc2626 !important;
+            color: #ffffff;
+            transform: none !important;
+            box-shadow: 0 5px 15px rgba(220,38,38,0.3) !important;
           }
         `}
       </style>
@@ -219,14 +218,14 @@ const Contact = () => {
                     <div className="contact-info-box" style={{ padding: '20px' }}>
                       <i className="bx bx-envelope" style={{ width: '45px', height: '45px', fontSize: '24px' }}></i>
                       <h3 style={{ fontSize: '18px' }}>Email Us</h3>
-                      <p style={{ fontSize: '13px' }}>{CompanyInfo.EMAIL}</p>
+                      <p style={{ fontSize: '13px', fontWeight: 'bold' }}>{CompanyInfo.EMAIL}</p>
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="contact-info-box" style={{ padding: '20px' }}>
                       <i className="bx bx-phone-call" style={{ width: '45px', height: '45px', fontSize: '24px' }}></i>
                       <h3 style={{ fontSize: '18px' }}>Call Us</h3>
-                      <p style={{ fontSize: '13px' }}>{CompanyInfo.PHONE}</p>
+                      <p style={{ fontSize: '13px', fontWeight: 'bold' }}>{CompanyInfo.PHONE}</p>
                     </div>
                   </div>
                 </div>
@@ -253,18 +252,19 @@ const Contact = () => {
                         <textarea name="message" className="form-control" placeholder="Your Message *" rows="6" required value={formData.message} onChange={handleChange}></textarea>
                       </div>
                       <div className="col-md-12 text-center">
-                        <button type="submit" className="btn-submit" disabled={isSubmitting}>
-                          {isSubmitting ? 'Sending...' : 'Submit Message'}
+                        <button 
+                          type="submit" 
+                          className={`btn-submit ${status === 'success' ? 'btn-success-state' : status === 'error' ? 'btn-error-state' : ''}`}
+                          disabled={isSubmitting || status === 'success'}
+                        >
+                          {isSubmitting ? 'Sending...' : 
+                           status === 'success' ? 'Thanks for contacting us, we will reply soon!' : 
+                           status === 'error' ? 'An error occurred. Please try again later.' : 
+                           'Submit Message'}
                         </button>
                       </div>
                     </div>
                   </form>
-                  
-                  {status && (
-                    <div className={`status-message ${status.includes('Thanks') ? 'status-success' : 'status-error'}`}>
-                      {status}
-                    </div>
-                  )}
                 </div>
               </div>
 

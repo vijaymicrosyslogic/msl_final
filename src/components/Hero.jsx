@@ -49,8 +49,8 @@ const Hero = () => {
                     <span>Collision Avoidance</span>
                   </div>
                   <div className="hero-buttons">
-                    <Link to="/products" className="hero-btn primary-btn">Explore</Link>
-                    <a href="#contact" className="hero-btn secondary-btn">Request Demo</a>
+                    <Link to="/products/defense/t90" className="hero-btn primary-btn">Explore</Link>
+                    <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>
                 <div className="hero-image-col desktop-only-img desktop-only">
@@ -82,8 +82,8 @@ const Hero = () => {
                     <span>Traffic Zones</span>
                   </div>
                   <div className="hero-buttons">
-                    <Link to="/products" className="hero-btn primary-btn">Explore</Link>
-                    <a href="#contact" className="hero-btn secondary-btn">Request Demo</a>
+                    <Link to="/products/ai/surveillance" className="hero-btn primary-btn">Explore</Link>
+                    <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>
                 <div className="hero-image-col desktop-only-img desktop-only">
@@ -115,8 +115,8 @@ const Hero = () => {
                     <span>Smart Allocation</span>
                   </div>
                   <div className="hero-buttons">
-                    <Link to="/products" className="hero-btn primary-btn">Explore</Link>
-                    <a href="#contact" className="hero-btn secondary-btn">Request Demo</a>
+                    <Link to="/products/hospitals/locker" className="hero-btn primary-btn">Explore</Link>
+                    <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>
                 <div className="hero-image-col desktop-only-img desktop-only">
@@ -148,8 +148,8 @@ const Hero = () => {
                     <span>Density Control</span>
                   </div>
                   <div className="hero-buttons">
-                    <Link to="/products" className="hero-btn primary-btn">Explore</Link>
-                    <a href="#contact" className="hero-btn secondary-btn">Request Demo</a>
+                    <Link to="/products/ai/traffic" className="hero-btn primary-btn">Explore</Link>
+                    <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>
                 <div className="hero-image-col desktop-only-img desktop-only">
@@ -181,8 +181,8 @@ const Hero = () => {
                     <span>Cost Reduction</span>
                   </div>
                   <div className="hero-buttons">
-                    <Link to="/products" className="hero-btn primary-btn">Explore</Link>
-                    <a href="#contact" className="hero-btn secondary-btn">Request Demo</a>
+                    <Link to="/products/manufacturing/mining" className="hero-btn primary-btn">Explore</Link>
+                    <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>
                 <div className="hero-image-col desktop-only-img desktop-only">
@@ -214,8 +214,8 @@ const Hero = () => {
                     <span>Auto-Ticketing</span>
                   </div>
                   <div className="hero-buttons">
-                    <Link to="/products" className="hero-btn primary-btn">Explore</Link>
-                    <a href="#contact" className="hero-btn secondary-btn">Request Demo</a>
+                    <Link to="/products/renewable/solar" className="hero-btn primary-btn">Explore</Link>
+                    <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>
                 <div className="hero-image-col desktop-only-img desktop-only">
@@ -247,8 +247,8 @@ const Hero = () => {
                     <span>Sensor Integration</span>
                   </div>
                   <div className="hero-buttons">
-                    <Link to="/products" className="hero-btn primary-btn">Explore</Link>
-                    <a href="#contact" className="hero-btn secondary-btn">Request Demo</a>
+                    <Link to="/products/manufacturing/iot" className="hero-btn primary-btn">Explore</Link>
+                    <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>
                 <div className="hero-image-col desktop-only-img desktop-only">
@@ -280,8 +280,8 @@ const Hero = () => {
                     <span>Emergency Beacon</span>
                   </div>
                   <div className="hero-buttons">
-                    <Link to="/products" className="hero-btn primary-btn">Explore</Link>
-                    <a href="#contact" className="hero-btn secondary-btn">Request Demo</a>
+                    <Link to="/products/manufacturing/mining" className="hero-btn primary-btn">Explore</Link>
+                    <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>
                 <div className="hero-image-col desktop-only-img desktop-only">
@@ -313,8 +313,8 @@ const Hero = () => {
                     <span>Remote Diagnostics</span>
                   </div>
                   <div className="hero-buttons">
-                    <Link to="/products" className="hero-btn primary-btn">Explore</Link>
-                    <a href="#contact" className="hero-btn secondary-btn">Request Demo</a>
+                    <Link to="/products/manufacturing/lift" className="hero-btn primary-btn">Explore</Link>
+                    <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>
                 <div className="hero-image-col desktop-only-img desktop-only">
@@ -346,7 +346,7 @@ const Hero = () => {
                   </div>
                   <div className="hero-buttons">
                     <Link to="/products/customization/rfid" className="hero-btn primary-btn">Explore</Link>
-                    <a href="#contact" className="hero-btn secondary-btn">Request Demo</a>
+                    <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>
                 <div className="hero-image-col desktop-only-img desktop-only">
