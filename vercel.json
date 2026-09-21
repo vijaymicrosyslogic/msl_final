@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/cpanel",
+      "destination": "https://cpanel.microsyslogic.com",
+      "permanent": true
+    },
+    {
+      "source": "/webmail",
+      "destination": "https://webmail.microsyslogic.com",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
