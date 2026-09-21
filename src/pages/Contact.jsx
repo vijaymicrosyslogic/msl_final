@@ -23,7 +23,7 @@ const Contact = () => {
     setStatus('');
 
     const submitData = new FormData();
-    submitData.append("access_key", "1cf55f96-bdd6-445b-baf8-54628baf49dd");
+    submitData.append("access_key", "75810757-8768-45fc-b3d7-ec0f23ab12a4");
     submitData.append("name", formData.name);
     submitData.append("email", formData.email);
     submitData.append("phone", formData.phone);
