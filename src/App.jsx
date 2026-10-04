@@ -13,6 +13,7 @@ import RenewableEnergy from './pages/RenewableEnergy';
 import SmartHospitals from './pages/SmartHospitals';
 import Customization from './pages/Customization';
 import Contact from './pages/Contact';
+import TrainingPrograms from './pages/TrainingPrograms';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
         <Route path="/services" element={<Placeholder title="Services" />} />
         <Route path="/services/:slug" element={<Placeholder title="Service Details" />} />
         
+        <Route path="/training-programs" element={<TrainingPrograms />} />
         <Route path="/training" element={<Placeholder title="Training" />} />
         <Route path="/career" element={<Placeholder title="Career" />} />
         <Route path="/contact" element={<Contact />} />

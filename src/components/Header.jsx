@@ -106,6 +106,7 @@ const Header = () => {
             
             {/* Mobile Only Menu Items */}
             <div className="mobile-only-menu-items mobile-only">
+              <Link to="/training-programs"><i className="bi bi-mortarboard"></i> Training Programs</Link>
               <Link to="/contact"><i className="bi bi-envelope"></i> Contact us</Link>
               <Link to="#" onClick={(e) => e.preventDefault()}><i className="bi bi-file-earmark-arrow-down"></i> Brochure</Link>
             </div>
@@ -121,6 +122,7 @@ const Header = () => {
                 <i className="bi bi-list" aria-hidden="true" style={{ fontSize: '24px' }}></i>
               </button>
               <div className="nav-dropdown-menu" style={{ left: 'auto', right: 0, top: 'calc(100% + 15px)', minWidth: '220px' }}>
+                <Link to="/training-programs"><i className="bi bi-mortarboard"></i> Training Programs</Link>
                 <Link to="/contact"><i className="bi bi-envelope"></i> Contact us</Link>
                 <Link to="#" onClick={(e) => e.preventDefault()}><i className="bi bi-file-earmark-arrow-down"></i> Brochure</Link>
               </div>
