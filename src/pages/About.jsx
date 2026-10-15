@@ -415,12 +415,12 @@ const About = () => {
             {/* Embedded Software */}
             <div className="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div style={{ padding: '30px 25px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', height: '100%', display: 'flex', flexDirection: 'column', transition: 'all 0.3s ease', backdropFilter: 'blur(10px)' }} onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.borderColor = 'rgba(226,49,63,0.3)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                  <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(226,49,63,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
+                  <div style={{ width: '50px', height: '50px', minWidth: '50px', borderRadius: '12px', background: 'rgba(226,49,63,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <i className="bx bx-code-alt" style={{ fontSize: '28px', color: '#E2313F' }}></i>
                   </div>
+                  <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#ffffff', margin: 0 }}>Embedded Software</h4>
                 </div>
-                <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#ffffff', margin: '0 0 10px 0' }}>Embedded Software</h4>
                 <p style={{ fontSize: '14px', color: '#94a3b8', marginBottom: '20px', lineHeight: '1.6' }}>End-to-end embedded platform development.</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#e2e8f0', fontSize: '14px', lineHeight: '1.6' }}>
                   <li style={{ paddingBottom: '10px', display: 'flex', alignItems: 'flex-start' }}><i className="bx bx-chevron-right" style={{ color: '#E2313F', fontSize: '18px', marginRight: '5px', marginTop: '2px' }}></i>OS Porting & BSP</li>
@@ -434,12 +434,12 @@ const About = () => {
             {/* Artificial Intelligence */}
             <div className="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
               <div style={{ padding: '30px 25px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', height: '100%', display: 'flex', flexDirection: 'column', transition: 'all 0.3s ease', backdropFilter: 'blur(10px)' }} onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.borderColor = 'rgba(226,49,63,0.3)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                  <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(226,49,63,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
+                  <div style={{ width: '50px', height: '50px', minWidth: '50px', borderRadius: '12px', background: 'rgba(226,49,63,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <i className="bx bx-brain" style={{ fontSize: '28px', color: '#E2313F' }}></i>
                   </div>
+                  <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#ffffff', margin: 0 }}>Artificial Intelligence</h4>
                 </div>
-                <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#ffffff', margin: '0 0 10px 0' }}>Artificial Intelligence</h4>
                 <p style={{ fontSize: '14px', color: '#94a3b8', marginBottom: '20px', lineHeight: '1.6' }}>Intelligent systems and AI-powered applications.</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#e2e8f0', fontSize: '14px', lineHeight: '1.6' }}>
                   <li style={{ paddingBottom: '10px', display: 'flex', alignItems: 'flex-start' }}><i className="bx bx-chevron-right" style={{ color: '#E2313F', fontSize: '18px', marginRight: '5px', marginTop: '2px' }}></i>Machine Learning</li>
@@ -453,12 +453,12 @@ const About = () => {
             {/* IOT/Security Solutions */}
             <div className="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
               <div style={{ padding: '30px 25px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', height: '100%', display: 'flex', flexDirection: 'column', transition: 'all 0.3s ease', backdropFilter: 'blur(10px)' }} onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.borderColor = 'rgba(226,49,63,0.3)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                  <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(226,49,63,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
+                  <div style={{ width: '50px', height: '50px', minWidth: '50px', borderRadius: '12px', background: 'rgba(226,49,63,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <i className="bx bx-shield-quarter" style={{ fontSize: '28px', color: '#E2313F' }}></i>
                   </div>
+                  <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#ffffff', margin: 0 }}>IOT & Security</h4>
                 </div>
-                <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#ffffff', margin: '0 0 10px 0' }}>IOT & Security</h4>
                 <p style={{ fontSize: '14px', color: '#94a3b8', marginBottom: '20px', lineHeight: '1.6' }}>Connected and secure intelligent solutions.</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#e2e8f0', fontSize: '14px', lineHeight: '1.6' }}>
                   <li style={{ paddingBottom: '10px', display: 'flex', alignItems: 'flex-start' }}><i className="bx bx-chevron-right" style={{ color: '#E2313F', fontSize: '18px', marginRight: '5px', marginTop: '2px' }}></i>AI-Based Security</li>
@@ -472,12 +472,12 @@ const About = () => {
             {/* Wireless Tech. */}
             <div className="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
               <div style={{ padding: '30px 25px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', height: '100%', display: 'flex', flexDirection: 'column', transition: 'all 0.3s ease', backdropFilter: 'blur(10px)' }} onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.borderColor = 'rgba(226,49,63,0.3)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                  <div style={{ width: '50px', height: '50px', borderRadius: '12px', background: 'rgba(226,49,63,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
+                  <div style={{ width: '50px', height: '50px', minWidth: '50px', borderRadius: '12px', background: 'rgba(226,49,63,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <i className="bx bx-wifi" style={{ fontSize: '28px', color: '#E2313F' }}></i>
                   </div>
+                  <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#ffffff', margin: 0 }}>Wireless Tech</h4>
                 </div>
-                <h4 style={{ fontSize: '18px', fontWeight: '700', color: '#ffffff', margin: '0 0 10px 0' }}>Wireless Tech</h4>
                 <p style={{ fontSize: '14px', color: '#94a3b8', marginBottom: '20px', lineHeight: '1.6' }}>Advanced wireless communication systems.</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: '#e2e8f0', fontSize: '14px', lineHeight: '1.6' }}>
                   <li style={{ paddingBottom: '10px', display: 'flex', alignItems: 'flex-start' }}><i className="bx bx-chevron-right" style={{ color: '#E2313F', fontSize: '18px', marginRight: '5px', marginTop: '2px' }}></i>Secure Communications</li>

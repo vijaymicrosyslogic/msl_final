@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
-// Central navigation data for product domains
-const navCategories = [
+// Navigation data for mobile drawer
+const mobileNavCategories = [
   {
     id: 'defense',
     title: 'Defense',
@@ -95,7 +95,7 @@ const Header = () => {
   const [openMobileCat, setOpenMobileCat] = useState(null);
   const location = useLocation();
 
-  // Close mobile drawer when route changes (render-phase state adjustment per React docs)
+  // Close mobile drawer when route changes
   const [prevPathname, setPrevPathname] = useState(location.pathname);
   if (prevPathname !== location.pathname) {
     setPrevPathname(location.pathname);
@@ -148,6 +148,78 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
 
+  // Touch gesture handling: swipe right-to-left to close mobile drawer
+  const touchStartX = useRef(null);
+  const touchStartY = useRef(null);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const currentX = e.touches[0].clientX;
+    const currentY = e.touches[0].clientY;
+    const deltaX = touchStartX.current - currentX; // positive when swiping right-to-left
+    const deltaY = Math.abs(touchStartY.current - currentY);
+
+    // If pushed left by at least 50px horizontally with predominantly horizontal movement
+    if (deltaX > 50 && deltaX > deltaY * 1.2) {
+      setIsMobileMenuOpen(false);
+      touchStartX.current = null;
+      touchStartY.current = null;
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaX = touchStartX.current - touchEndX; // positive when swiping right-to-left
+    const deltaY = Math.abs(touchStartY.current - touchEndY);
+
+    // If swiped right-to-left by at least 35px
+    if (deltaX > 35 && deltaX > deltaY) {
+      setIsMobileMenuOpen(false);
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
+
+  // Mouse drag handlers for testing in responsive browser mode
+  const mouseStartX = useRef(null);
+  const mouseStartY = useRef(null);
+
+  const handleMouseDown = (e) => {
+    if (e.button === 0) {
+      mouseStartX.current = e.clientX;
+      mouseStartY.current = e.clientY;
+    }
+  };
+
+  const handleMouseMove = (e) => {
+    if (mouseStartX.current === null || mouseStartY.current === null) return;
+    const deltaX = mouseStartX.current - e.clientX;
+    const deltaY = Math.abs(mouseStartY.current - e.clientY);
+    if (deltaX > 50 && deltaX > deltaY * 1.2) {
+      setIsMobileMenuOpen(false);
+      mouseStartX.current = null;
+      mouseStartY.current = null;
+    }
+  };
+
+  const handleMouseUp = (e) => {
+    if (mouseStartX.current === null || mouseStartY.current === null) return;
+    const deltaX = mouseStartX.current - e.clientX;
+    const deltaY = Math.abs(mouseStartY.current - e.clientY);
+    if (deltaX > 35 && deltaX > deltaY) {
+      setIsMobileMenuOpen(false);
+    }
+    mouseStartX.current = null;
+    mouseStartY.current = null;
+  };
+
   return (
     <header className={`new-header-container ${isScrolled ? 'scrolled' : ''}`}>
       {/* Top Main Navigation Bar */}
@@ -165,7 +237,7 @@ const Header = () => {
             <i className={`bi ${isMobileMenuOpen ? 'bi-x-lg' : 'bi-list'}`}></i>
           </button>
 
-          {/* Logo (Centered on Mobile, Left-aligned on Desktop) */}
+          {/* Logo */}
           <Link 
             to="/" 
             className="nav-logo" 
@@ -178,56 +250,66 @@ const Header = () => {
             <span className="logo-text">MicroSysLogic</span>
           </Link>
 
-          {/* Desktop Navigation Links (Visible on >= 1200px) */}
-          <nav className="top-links desktop-only" aria-label="Main Desktop Navigation">
-            <Link 
-              to="/" 
-              className={location.pathname === '/' ? 'active-link' : ''}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-              Home
-            </Link>
-            <Link 
-              to="/about"
-              className={location.pathname === '/about' ? 'active-link' : ''}
-            >
-              About us
-            </Link>
+          {/* Desktop Navigation Links (Original layout and dropdowns preserved) */}
+          <div className="top-links desktop-only" style={{ alignItems: 'center' }}>
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</Link>
+            <Link to="/about">About us</Link>
 
-            {navCategories.map((cat) => (
-              <div key={cat.id} className="nav-dropdown">
-                <Link 
-                  to={cat.path}
-                  className={location.pathname.startsWith(cat.path) ? 'active-link' : ''}
-                >
-                  {cat.navLabel} <i className="bi bi-chevron-down ch-icon"></i>
-                </Link>
-                <div className="nav-dropdown-menu">
-                  {/* Category Overview Link */}
-                  <Link to={cat.path} className="dropdown-overview-link">
-                    <i className="bi bi-grid-fill"></i>
-                    <div className="dropdown-overview-text">
-                      <span className="dropdown-overview-title">All {cat.title} Solutions</span>
-                      <span className="dropdown-overview-sub">View full capabilities & portfolio</span>
-                    </div>
-                  </Link>
-                  <div className="dropdown-menu-divider"></div>
-                  {cat.items.map((item) => (
-                    <Link key={item.path} to={item.path}>
-                      <i className={`bi ${item.icon}`}></i> {item.label}
-                    </Link>
-                  ))}
-                </div>
+            <div className="nav-dropdown">
+              <Link to="/products/defense">Defense</Link>
+              <div className="nav-dropdown-menu">
+                <Link to="/products/defense/t90"><i className="bi bi-broadcast"></i> T90’s V2V RF Comm. & Automation</Link>
+                <Link to="/products/defense/g3000"><i className="bi bi-airplane"></i> Flight control Monitor Device</Link>
+                <Link to="/products/defense/locker"><i className="bi bi-safe"></i> High safety AI locker</Link>
+                <Link to="/products/defense/video"><i className="bi bi-camera-reels"></i> Secure Handheld Communicator</Link>
+                <Link to="/products/defense/soc-modernization"><i className="bi bi-cpu"></i> Legacy to Latest SOC Modernization</Link>
+                <Link to="/products/defense/ai-security"><i className="bi bi-shield-lock"></i> AI Secured Zones Monitoring System</Link>
               </div>
-            ))}
+            </div>
 
-            <Link 
-              to="/training-programs"
-              className={location.pathname.startsWith('/training') ? 'active-link' : ''}
-            >
-              Training Programs
-            </Link>
-          </nav>
+            <div className="nav-dropdown">
+              <Link to="/products/ai">AI</Link>
+              <div className="nav-dropdown-menu">
+                <Link to="/products/ai/surveillance"><i className="bi bi-camera-video"></i> AI High Security Surveillance</Link>
+                <Link to="/products/ai/traffic"><i className="bi bi-stoplights"></i> AI High Traffic Signaling System</Link>
+                <Link to="/products/ai/tender"><i className="bi bi-file-earmark-text"></i> AI Tender/Bidding Solution</Link>
+              </div>
+            </div>
+
+            <div className="nav-dropdown">
+              <Link to="/products/renewable">Renewable Energy</Link>
+              <div className="nav-dropdown-menu">
+                <Link to="/products/renewable/solar"><i className="bi bi-brightness-high"></i> Smart Solar Energy Systems</Link>
+              </div>
+            </div>
+
+            <div className="nav-dropdown">
+              <Link to="/products/hospitals">Smart Hospitals</Link>
+              <div className="nav-dropdown-menu">
+                <Link to="/products/hospitals/automation"><i className="bi bi-hospital"></i> Smart Hospital IOT Automation & Monitoring System</Link>
+                <Link to="/products/hospitals/locker"><i className="bi bi-shield-lock"></i> AI Secured Locker Systems for Drugs</Link>
+                <Link to="/products/hospitals/nurse-tablet"><i className="bi bi-tablet"></i> Smart AI Locker for Nurse Tablets</Link>
+                <Link to="/products/hospitals/impress-stock"><i className="bi bi-inboxes"></i> Impress Stock AI Medicine Access</Link>
+              </div>
+            </div>
+
+            <div className="nav-dropdown">
+              <Link to="/products/automations">Automations</Link>
+              <div className="nav-dropdown-menu">
+                <Link to="/products/automations/iot"><i className="bi bi-cpu"></i> Industrial IOT</Link>
+                <Link to="/products/automations/mining"><i className="bi bi-shield-fill-exclamation"></i> Safety Mining</Link>
+                <Link to="/products/automations/lift"><i className="bi bi-arrow-up-square"></i> Multi Escalators & lift failures Identification</Link>
+                <Link to="/products/automations/face"><i className="bi bi-person-bounding-box"></i> Face Analytics on Broadcom Soc Platform</Link>
+                <Link to="/products/automations/drone"><i className="bi bi-bullseye"></i> Onboard Vehicle Detection for Drones</Link>
+                <Link to="/products/automations/thermal"><i className="bi bi-thermometer-half"></i> Thermal camera distance Detection</Link>
+                <Link to="/products/automations/dehaze"><i className="bi bi-cloud-haze"></i> Dehaze / Snow-Fog Removal</Link>
+                <Link to="/products/automations/defect"><i className="bi bi-search"></i> Product Defect Detect</Link>
+                <Link to="/products/automations/rfid"><i className="bi bi-person-badge"></i> RFID Visitor Tracking Solutions</Link>
+              </div>
+            </div>
+
+            <Link to="/training-programs">Training Programs</Link>
+          </div>
 
           {/* Actions on the Right */}
           <div className="top-actions">
@@ -248,7 +330,7 @@ const Header = () => {
               </button>
               <div className="nav-dropdown-menu" style={{ left: 'auto', right: 0, top: 'calc(100% + 15px)', minWidth: '220px' }}>
                 <Link to="/contact"><i className="bi bi-envelope"></i> Contact us</Link>
-                <Link to="/contact?inquiry=brochure"><i className="bi bi-file-earmark-arrow-down"></i> Brochure</Link>
+                <Link to="#" onClick={(e) => e.preventDefault()}><i className="bi bi-file-earmark-arrow-down"></i> Brochure</Link>
               </div>
             </div>
           </div>
@@ -264,15 +346,24 @@ const Header = () => {
       <div 
         className={`mobile-menu-backdrop ${isMobileMenuOpen ? 'active' : ''}`}
         onClick={() => setIsMobileMenuOpen(false)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         aria-hidden="true"
       />
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer with Swipe-to-Close Gestures */}
       <aside 
         className={`mobile-menu-drawer ${isMobileMenuOpen ? 'active' : ''}`}
         role="dialog"
         aria-modal="true"
         aria-label="Navigation Menu"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
       >
         {/* Drawer Header */}
         <div className="drawer-header">
@@ -327,14 +418,14 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Solutions & Products Accordions */}
+          {/* Solutions & Products Accordions (Mobile Only) */}
           <div className="drawer-section">
             <div className="drawer-section-header">
               <span className="drawer-section-tag">SOLUTIONS & CAPABILITIES</span>
             </div>
 
             <div className="drawer-accordion-list">
-              {navCategories.map((cat) => {
+              {mobileNavCategories.map((cat) => {
                 const isExpanded = openMobileCat === cat.id;
                 const isCatActive = location.pathname.startsWith(cat.path);
 
@@ -367,7 +458,7 @@ const Header = () => {
                     {/* Collapsible Panel */}
                     <div className={`drawer-accordion-collapse ${isExpanded ? 'show' : ''}`}>
                       <div className="drawer-accordion-body">
-                        {/* THE MISSING MAIN PRODUCT CATEGORY LINK */}
+                        {/* Direct Link to Main Product Category Page for Mobile */}
                         <Link 
                           to={cat.path} 
                           className="cat-overview-banner"
@@ -456,7 +547,7 @@ const Header = () => {
                 <i className="bi bi-telephone-fill"></i>
                 <span>+91 8008166724</span>
               </a>
-              <a href="mailto:info@microsyslogic.com" className="drawer-contact-row">
+              <a href="mailto:info@microsyslogic.com" className="drawer-contact-link">
                 <i className="bi bi-envelope-at-fill"></i>
                 <span>info@microsyslogic.com</span>
               </a>

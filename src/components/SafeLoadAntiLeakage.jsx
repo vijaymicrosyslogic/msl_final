@@ -141,39 +141,45 @@ const SafeLoadAntiLeakage = () => {
 
             <div className="row g-4" style={{ marginBottom: '50px' }}>
               <div className="col-lg-4">
-                <div className="safeload-card h-100" style={{ padding: '30px', borderTop: '4px solid #1a2a4a' }}>
-                  <div className="safeload-icon-circle mb-4">
-                    <i className="bx bx-shield-alt-2"></i>
+                <div className="safeload-card h-100" style={{ padding: '28px 24px', borderTop: '4px solid #1a2a4a', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '16px' }}>
+                    <div className="safeload-icon-circle" style={{ flexShrink: 0 }}>
+                      <i className="bx bx-shield-alt-2"></i>
+                    </div>
+                    <h4 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '18px', margin: 0, lineHeight: '1.3' }}>Coal Theft & Leakage Prevention</h4>
                   </div>
-                  <h4 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '18px', marginBottom: '15px' }}>Coal Theft & Leakage Prevention</h4>
-                  <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>Compare source loading, route path, stop events, and dump-point validation to prevent coal leakage at every stage of the journey.</p>
-                  <ul className="feature-list">
+                  <p className="msl-text-body" style={{ fontSize: '14px', lineHeight: '1.6', margin: 0, flexGrow: 1 }}>Compare source loading, route path, stop events, and dump-point validation to prevent coal leakage at every stage of the journey.</p>
+                  <ul className="feature-list" style={{ marginTop: '16px' }}>
                     <li><i className="bx bx-map-pin"></i> Route Deviation Alerts</li>
                     <li><i className="bx bx-lock"></i> Secure Dump Verification</li>
                   </ul>
                 </div>
               </div>
               <div className="col-lg-4">
-                <div className="safeload-card h-100" style={{ padding: '30px', borderTop: '4px solid #c0001a' }}>
-                  <div className="safeload-icon-circle mb-4">
-                    <i className="bx bx-car"></i>
+                <div className="safeload-card h-100" style={{ padding: '28px 24px', borderTop: '4px solid #c0001a', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '16px' }}>
+                    <div className="safeload-icon-circle" style={{ flexShrink: 0 }}>
+                      <i className="bx bx-car"></i>
+                    </div>
+                    <h4 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '18px', margin: 0, lineHeight: '1.3' }}>Reckless Driving Control</h4>
                   </div>
-                  <h4 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '18px', marginBottom: '15px' }}>Reckless Driving Control</h4>
-                  <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>Detect over-speeding, route deviation, harsh driving, and unauthorized stops using real-time vehicle behavior analytics.</p>
-                  <ul className="feature-list">
+                  <p className="msl-text-body" style={{ fontSize: '14px', lineHeight: '1.6', margin: 0, flexGrow: 1 }}>Detect over-speeding, route deviation, harsh driving, and unauthorized stops using real-time vehicle behavior analytics.</p>
+                  <ul className="feature-list" style={{ marginTop: '16px' }}>
                     <li><i className="bx bx-tachometer"></i> Speed & Braking Analytics</li>
                     <li><i className="bx bx-user-check"></i> Driver Scorecards</li>
                   </ul>
                 </div>
               </div>
               <div className="col-lg-4">
-                <div className="safeload-card h-100" style={{ padding: '30px', borderTop: '4px solid #1a2a4a' }}>
-                  <div className="safeload-icon-circle mb-4">
-                    <i className="bx bx-broadcast"></i>
+                <div className="safeload-card h-100" style={{ padding: '28px 24px', borderTop: '4px solid #1a2a4a', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '16px' }}>
+                    <div className="safeload-icon-circle" style={{ flexShrink: 0 }}>
+                      <i className="bx bx-broadcast"></i>
+                    </div>
+                    <h4 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '18px', margin: 0, lineHeight: '1.3' }}>Emergency Response</h4>
                   </div>
-                  <h4 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '18px', marginBottom: '15px' }}>Emergency Response</h4>
-                  <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>Send live position and alert status directly to the control room to significantly reduce emergency response time.</p>
-                  <ul className="feature-list">
+                  <p className="msl-text-body" style={{ fontSize: '14px', lineHeight: '1.6', margin: 0, flexGrow: 1 }}>Send live position and alert status directly to the control room to significantly reduce emergency response time.</p>
+                  <ul className="feature-list" style={{ marginTop: '16px' }}>
                     <li><i className="bx bx-bell"></i> Instant SOS Beacons</li>
                     <li><i className="bx bx-target-lock"></i> Exact Coordinate Sharing</li>
                   </ul>

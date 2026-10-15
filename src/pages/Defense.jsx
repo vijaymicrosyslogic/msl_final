@@ -377,39 +377,39 @@ const Defense = () => {
                     
                     <div className="row g-4">
                       <div className="col-sm-6">
-                        <div style={{ display: 'flex', gap: '15px' , flexWrap: 'wrap'}}>
-                          <i className="bx bx-chip" style={{ fontSize: 'clamp(18px, 4vw, 24.0px)', color: '#FF4D4D' }}></i>
-                          <div>
-                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Vehicle Monitoring Unit</h6>
-                            <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Collects parameters like engine diagnostics, fuel, ammo, and GPS.</p>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                            <i className="bx bx-chip" style={{ fontSize: 'clamp(20px, 4vw, 24.0px)', color: '#FF4D4D', flexShrink: 0 }}></i>
+                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', margin: 0 }}>Vehicle Monitoring Unit</h6>
                           </div>
+                          <p style={{ color: '#64748B', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Collects parameters like engine diagnostics, fuel, ammo, and GPS.</p>
                         </div>
                       </div>
                       <div className="col-sm-6">
-                        <div style={{ display: 'flex', gap: '15px' , flexWrap: 'wrap'}}>
-                          <i className="bx bx-lock-alt" style={{ fontSize: 'clamp(18px, 4vw, 24.0px)', color: '#FF4D4D' }}></i>
-                          <div>
-                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Secure RF Network</h6>
-                            <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Dedicated protocol for V2V and V2C communication.</p>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                            <i className="bx bx-lock-alt" style={{ fontSize: 'clamp(20px, 4vw, 24.0px)', color: '#FF4D4D', flexShrink: 0 }}></i>
+                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', margin: 0 }}>Secure RF Network</h6>
                           </div>
+                          <p style={{ color: '#64748B', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Dedicated protocol for V2V and V2C communication.</p>
                         </div>
                       </div>
                       <div className="col-sm-6">
-                        <div style={{ display: 'flex', gap: '15px' , flexWrap: 'wrap'}}>
-                          <i className="bx bx-server" style={{ fontSize: 'clamp(18px, 4vw, 24.0px)', color: '#FF4D4D' }}></i>
-                          <div>
-                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Master Commander Station</h6>
-                            <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Operational control center providing fleet-wide visibility.</p>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                            <i className="bx bx-server" style={{ fontSize: 'clamp(20px, 4vw, 24.0px)', color: '#FF4D4D', flexShrink: 0 }}></i>
+                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', margin: 0 }}>Master Commander Station</h6>
                           </div>
+                          <p style={{ color: '#64748B', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Operational control center providing fleet-wide visibility.</p>
                         </div>
                       </div>
                       <div className="col-sm-6">
-                        <div style={{ display: 'flex', gap: '15px' , flexWrap: 'wrap'}}>
-                          <i className="bx bx-network-chart" style={{ fontSize: 'clamp(18px, 4vw, 24.0px)', color: '#FF4D4D' }}></i>
-                          <div>
-                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Mesh Communication</h6>
-                            <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Interconnected network eliminating single-point failures.</p>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+                            <i className="bx bx-network-chart" style={{ fontSize: 'clamp(20px, 4vw, 24.0px)', color: '#FF4D4D', flexShrink: 0 }}></i>
+                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', margin: 0 }}>Mesh Communication</h6>
                           </div>
+                          <p style={{ color: '#64748B', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Interconnected network eliminating single-point failures.</p>
                         </div>
                       </div>
                     </div>
@@ -841,69 +841,69 @@ const Defense = () => {
                     <h4 style={{ color: '#1a2a4a', fontSize: 'clamp(15px, 3vw, 22.0px)', fontWeight: '800', marginBottom: '25px' }}>Key Features</h4>
                     <div className="row g-4">
                       <div className="col-md-6">
-                        <div style={{ display: 'flex', gap: '15px' , flexWrap: 'wrap'}}>
-                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 , flexWrap: 'wrap'}}>
-                            <i className="bx bx-face" style={{ fontSize: 'clamp(18px, 4vw, 26.0px)', color: '#C0001A' }}></i>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '8px' }}>
+                            <div style={{ width: '45px', height: '45px', minWidth: '45px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              <i className="bx bx-face" style={{ fontSize: 'clamp(18px, 4vw, 24.0px)', color: '#C0001A' }}></i>
+                            </div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', margin: 0 }}>AI Biometrics</h6>
                           </div>
-                          <div>
-                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>AI Biometrics</h6>
-                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Facial recognition & smart card dual-auth.</p>
-                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Facial recognition & smart card dual-auth.</p>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div style={{ display: 'flex', gap: '15px' , flexWrap: 'wrap'}}>
-                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 , flexWrap: 'wrap'}}>
-                            <i className="bx bx-radar" style={{ fontSize: 'clamp(18px, 4vw, 26.0px)', color: '#C0001A' }}></i>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '8px' }}>
+                            <div style={{ width: '45px', height: '45px', minWidth: '45px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              <i className="bx bx-radar" style={{ fontSize: 'clamp(18px, 4vw, 24.0px)', color: '#C0001A' }}></i>
+                            </div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', margin: 0 }}>Real-Time Monitoring</h6>
                           </div>
-                          <div>
-                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Real-Time Monitoring</h6>
-                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Instant tamper alerts & status tracking.</p>
-                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Instant tamper alerts & status tracking.</p>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div style={{ display: 'flex', gap: '15px' , flexWrap: 'wrap'}}>
-                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 , flexWrap: 'wrap'}}>
-                            <i className="bx bx-history" style={{ fontSize: 'clamp(18px, 4vw, 26.0px)', color: '#C0001A' }}></i>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '8px' }}>
+                            <div style={{ width: '45px', height: '45px', minWidth: '45px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              <i className="bx bx-history" style={{ fontSize: 'clamp(18px, 4vw, 24.0px)', color: '#C0001A' }}></i>
+                            </div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', margin: 0 }}>Comprehensive Audit</h6>
                           </div>
-                          <div>
-                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Comprehensive Audit</h6>
-                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Immutable digital trails for compliance.</p>
-                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Immutable digital trails for compliance.</p>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div style={{ display: 'flex', gap: '15px' , flexWrap: 'wrap'}}>
-                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 , flexWrap: 'wrap'}}>
-                            <i className="bx bx-wifi-off" style={{ fontSize: 'clamp(18px, 4vw, 26.0px)', color: '#C0001A' }}></i>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '8px' }}>
+                            <div style={{ width: '45px', height: '45px', minWidth: '45px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              <i className="bx bx-wifi-off" style={{ fontSize: 'clamp(18px, 4vw, 24.0px)', color: '#C0001A' }}></i>
+                            </div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', margin: 0 }}>Network-Isolated</h6>
                           </div>
-                          <div>
-                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Network-Isolated</h6>
-                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>100% operational on private networks.</p>
-                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>100% operational on private networks.</p>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div style={{ display: 'flex', gap: '15px' , flexWrap: 'wrap'}}>
-                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 , flexWrap: 'wrap'}}>
-                            <i className="bx bx-box" style={{ fontSize: 'clamp(18px, 4vw, 26.0px)', color: '#C0001A' }}></i>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '8px' }}>
+                            <div style={{ width: '45px', height: '45px', minWidth: '45px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              <i className="bx bx-box" style={{ fontSize: 'clamp(18px, 4vw, 24.0px)', color: '#C0001A' }}></i>
+                            </div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', margin: 0 }}>Secure Storage</h6>
                           </div>
-                          <div>
-                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Secure Storage</h6>
-                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Protect documents, laptops & comms gear.</p>
-                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Protect documents, laptops & comms gear.</p>
                         </div>
                       </div>
                       <div className="col-md-6">
-                        <div style={{ display: 'flex', gap: '15px' , flexWrap: 'wrap'}}>
-                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 , flexWrap: 'wrap'}}>
-                            <i className="bx bx-shield-x" style={{ fontSize: 'clamp(18px, 4vw, 26.0px)', color: '#C0001A' }}></i>
+                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '8px' }}>
+                            <div style={{ width: '45px', height: '45px', minWidth: '45px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              <i className="bx bx-shield-x" style={{ fontSize: 'clamp(18px, 4vw, 24.0px)', color: '#C0001A' }}></i>
+                            </div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', margin: 0 }}>Tamper-Proof Security</h6>
                           </div>
-                          <div>
-                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Tamper-Proof Security</h6>
-                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Auto-detects & alerts on unauthorized access.</p>
-                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Auto-detects & alerts on unauthorized access.</p>
                         </div>
                       </div>
                     </div>
@@ -1194,17 +1194,21 @@ const Defense = () => {
                     
                     <div className="row g-4">
                       <div className="col-sm-6">
-                        <div style={{ background: '#fff', padding: 'clamp(10px, 3vw, 20.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
-                          <i className="bx bx-network-chart" style={{ fontSize: 'clamp(18px, 4vw, 32.0px)', color: '#C0001A', marginBottom: '15px' }}></i>
-                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>High Speed Connectivity</h6>
-                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Support for ETH, CAN FD, ARINC, and PCIe for massive data throughput.</p>
+                        <div style={{ background: '#fff', padding: 'clamp(16px, 3vw, 24.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                            <i className="bx bx-network-chart" style={{ fontSize: 'clamp(22px, 4vw, 28.0px)', color: '#C0001A', flexShrink: 0 }}></i>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '16px', margin: 0 }}>High Speed Connectivity</h6>
+                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13.5px', margin: 0, lineHeight: '1.6' }}>Support for ETH, CAN FD, ARINC, and PCIe for massive data throughput.</p>
                         </div>
                       </div>
                       <div className="col-sm-6">
-                        <div style={{ background: '#fff', padding: 'clamp(10px, 3vw, 20.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
-                          <i className="bx bx-check-shield" style={{ fontSize: 'clamp(18px, 4vw, 32.0px)', color: '#C0001A', marginBottom: '15px' }}></i>
-                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Enhanced Reliability</h6>
-                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Scalable, future-ready architecture with top-tier security & fault tolerance.</p>
+                        <div style={{ background: '#fff', padding: 'clamp(16px, 3vw, 24.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                            <i className="bx bx-check-shield" style={{ fontSize: 'clamp(22px, 4vw, 28.0px)', color: '#C0001A', flexShrink: 0 }}></i>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '16px', margin: 0 }}>Enhanced Reliability</h6>
+                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13.5px', margin: 0, lineHeight: '1.6' }}>Scalable, future-ready architecture with top-tier security & fault tolerance.</p>
                         </div>
                       </div>
                     </div>
@@ -1226,14 +1230,14 @@ const Defense = () => {
                     { icon: 'bx-table', title: 'Traceability Matrix', desc: 'End-to-end requirement traceability for compliance.' }
                   ].map((cap, idx) => (
                     <div className="col-lg-4 col-md-6" key={idx}>
-                      <div style={{ padding: 'clamp(10px, 3vw, 20.0px)', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', gap: '15px', height: '100%' , flexWrap: 'wrap'}}>
-                        <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(192,0,26,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 , flexWrap: 'wrap'}}>
-                          <i className={`bx ${cap.icon}`} style={{ fontSize: 'clamp(15px, 3vw, 20.0px)', color: '#C0001A' }}></i>
+                      <div style={{ padding: 'clamp(16px, 3vw, 22.0px)', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                          <div style={{ width: '42px', height: '42px', minWidth: '42px', borderRadius: '8px', background: 'rgba(192,0,26,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <i className={`bx ${cap.icon}`} style={{ fontSize: 'clamp(18px, 3vw, 22.0px)', color: '#C0001A' }}></i>
+                          </div>
+                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15.5px', margin: 0, lineHeight: '1.3' }}>{cap.title}</h6>
                         </div>
-                        <div>
-                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>{cap.title}</h6>
-                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>{cap.desc}</p>
-                        </div>
+                        <p style={{ color: '#64748b', fontSize: '13px', margin: 0, lineHeight: '1.6' }}>{cap.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -1348,31 +1352,39 @@ const Defense = () => {
                     
                     <div className="row g-4">
                       <div className="col-sm-6">
-                        <div style={{ background: '#fff', padding: 'clamp(10px, 3vw, 20.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
-                          <i className="bx bx-scan" style={{ fontSize: 'clamp(18px, 4vw, 32.0px)', color: '#C0001A', marginBottom: '15px' }}></i>
-                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Capture & Detect</h6>
-                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>AI camera captures and tracks people in real time.</p>
+                        <div style={{ background: '#fff', padding: 'clamp(16px, 3vw, 24.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                            <i className="bx bx-scan" style={{ fontSize: 'clamp(22px, 4vw, 28.0px)', color: '#C0001A', flexShrink: 0 }}></i>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '16px', margin: 0 }}>Capture & Detect</h6>
+                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13.5px', margin: 0, lineHeight: '1.6' }}>AI camera captures and tracks people in real time.</p>
                         </div>
                       </div>
                       <div className="col-sm-6">
-                        <div style={{ background: '#fff', padding: 'clamp(10px, 3vw, 20.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
-                          <i className="bx bx-brain" style={{ fontSize: 'clamp(18px, 4vw, 32.0px)', color: '#C0001A', marginBottom: '15px' }}></i>
-                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>AI Recognition</h6>
-                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Cross-check with authorized & unauthorized databases.</p>
+                        <div style={{ background: '#fff', padding: 'clamp(16px, 3vw, 24.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                            <i className="bx bx-brain" style={{ fontSize: 'clamp(22px, 4vw, 28.0px)', color: '#C0001A', flexShrink: 0 }}></i>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '16px', margin: 0 }}>AI Recognition</h6>
+                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13.5px', margin: 0, lineHeight: '1.6' }}>Cross-check with authorized & unauthorized databases.</p>
                         </div>
                       </div>
                       <div className="col-sm-6">
-                        <div style={{ background: '#fff', padding: 'clamp(10px, 3vw, 20.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
-                          <i className="bx bx-bell" style={{ fontSize: 'clamp(18px, 4vw, 32.0px)', color: '#C0001A', marginBottom: '15px' }}></i>
-                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Decision & Alert</h6>
-                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Identify status and generate early alerts.</p>
+                        <div style={{ background: '#fff', padding: 'clamp(16px, 3vw, 24.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                            <i className="bx bx-bell" style={{ fontSize: 'clamp(22px, 4vw, 28.0px)', color: '#C0001A', flexShrink: 0 }}></i>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '16px', margin: 0 }}>Decision & Alert</h6>
+                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13.5px', margin: 0, lineHeight: '1.6' }}>Identify status and generate early alerts.</p>
                         </div>
                       </div>
                       <div className="col-sm-6">
-                        <div style={{ background: '#fff', padding: 'clamp(10px, 3vw, 20.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
-                          <i className="bx bx-building" style={{ fontSize: 'clamp(18px, 4vw, 32.0px)', color: '#C0001A', marginBottom: '15px' }}></i>
-                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Target Applications</h6>
-                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Defence facilities, traffic zones, and high-security offices.</p>
+                        <div style={{ background: '#fff', padding: 'clamp(16px, 3vw, 24.0px)', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                            <i className="bx bx-building" style={{ fontSize: 'clamp(22px, 4vw, 28.0px)', color: '#C0001A', flexShrink: 0 }}></i>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '16px', margin: 0 }}>Target Applications</h6>
+                          </div>
+                          <p style={{ color: '#64748b', fontSize: '13.5px', margin: 0, lineHeight: '1.6' }}>Defence facilities, traffic zones, and high-security offices.</p>
                         </div>
                       </div>
                     </div>
@@ -1394,14 +1406,14 @@ const Defense = () => {
                     { icon: 'bx-desktop', title: 'GUI Dashboard', desc: 'Created custom GUI Dashboard to visualize threats and alerts.' }
                   ].map((cap, idx) => (
                     <div className="col-lg-4 col-md-6" key={idx}>
-                      <div style={{ padding: 'clamp(10px, 3vw, 20.0px)', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', gap: '15px', height: '100%' , flexWrap: 'wrap'}}>
-                        <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(192,0,26,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 , flexWrap: 'wrap'}}>
-                          <i className={`bx ${cap.icon}`} style={{ fontSize: 'clamp(15px, 3vw, 20.0px)', color: '#C0001A' }}></i>
+                      <div style={{ padding: 'clamp(16px, 3vw, 22.0px)', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                          <div style={{ width: '42px', height: '42px', minWidth: '42px', borderRadius: '8px', background: 'rgba(192,0,26,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <i className={`bx ${cap.icon}`} style={{ fontSize: 'clamp(18px, 3vw, 22.0px)', color: '#C0001A' }}></i>
+                          </div>
+                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15.5px', margin: 0, lineHeight: '1.3' }}>{cap.title}</h6>
                         </div>
-                        <div>
-                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>{cap.title}</h6>
-                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>{cap.desc}</p>
-                        </div>
+                        <p style={{ color: '#64748b', fontSize: '13px', margin: 0, lineHeight: '1.6' }}>{cap.desc}</p>
                       </div>
                     </div>
                   ))}

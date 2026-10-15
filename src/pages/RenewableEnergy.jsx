@@ -213,12 +213,14 @@ const RenewableEnergy = () => {
                   { icon: 'bx-network-chart', title: 'Scalable Monitoring', desc: 'Support solar installations ranging from kilowatt rooftop systems to multi-megawatt utility-scale plants.' }
                 ].map((cap, idx) => (
                   <div className="col-lg-3 col-md-6" key={idx}>
-                    <div className="ai-feature-card" style={{ padding: 'clamp(10px, 3vw, 25.0px) clamp(10px, 3vw, 20.0px)', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' , flexWrap: 'wrap'}}>
-                      <div style={{ width: '48px', height: '48px', minWidth: '48px', borderRadius: '12px', background: 'rgba(192,0,26,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px' , flexWrap: 'wrap'}}>
-                        <i className={`bx ${cap.icon}`} style={{ color: '#c0001a', fontSize: 'clamp(18px, 4vw, 24.0px)' }}></i>
+                    <div className="ai-feature-card" style={{ padding: 'clamp(16px, 3vw, 24.0px)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
+                        <div style={{ width: '46px', height: '46px', minWidth: '46px', borderRadius: '12px', background: 'rgba(192,0,26,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          <i className={`bx ${cap.icon}`} style={{ color: '#c0001a', fontSize: 'clamp(20px, 4vw, 24.0px)' }}></i>
+                        </div>
+                        <h6 style={{ color: '#1a2a4a', fontSize: '16px', fontWeight: '800', margin: 0, lineHeight: '1.3' }}>{cap.title}</h6>
                       </div>
-                      <h6 style={{ color: '#1a2a4a', fontSize: '16px', fontWeight: '700', marginBottom: '8px' }}>{cap.title}</h6>
-                      <p style={{ color: '#4a5568', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>{cap.desc}</p>
+                      <p style={{ color: '#4a5568', fontSize: '13.5px', margin: 0, lineHeight: '1.6' }}>{cap.desc}</p>
                     </div>
                   </div>
                 ))}

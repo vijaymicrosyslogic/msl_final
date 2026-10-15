@@ -1001,12 +1001,14 @@ const SmartHospitals = () => {
                       { icon: 'bx-lock-open-alt', title: 'Emergency Override', desc: 'Mechanical bypass and IT-remote unlocking capabilities ensure access is never completely blocked during a crisis.' }
                     ].map((feature, i) => (
                       <div className="col-md-4" key={i}>
-                        <div style={{ background: '#fff', borderRadius: '20px', padding: 'clamp(10px, 3vw, 25.0px) clamp(10px, 3vw, 20.0px)', height: '100%', border: '1px solid #e2e8f0', transition: 'all 0.3s ease' }} className="hover-shadow">
-                          <div style={{ width: '45px', height: '45px', borderRadius: '12px', background: 'rgba(192,0,26,0.1)', color: '#c0001a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'clamp(15px, 3vw, 22.0px)', marginBottom: '15px' , flexWrap: 'wrap'}}>
-                            <i className={`bx ${feature.icon}`}></i>
+                        <div style={{ background: '#fff', borderRadius: '20px', padding: 'clamp(18px, 3vw, 25.0px)', height: '100%', border: '1px solid #e2e8f0', transition: 'all 0.3s ease', display: 'flex', flexDirection: 'column' }} className="hover-shadow">
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
+                            <div style={{ width: '45px', height: '45px', minWidth: '45px', borderRadius: '12px', background: 'rgba(192,0,26,0.1)', color: '#c0001a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'clamp(18px, 3vw, 22.0px)', flexShrink: 0 }}>
+                              <i className={`bx ${feature.icon}`}></i>
+                            </div>
+                            <h5 style={{ fontSize: '16px', fontWeight: '800', color: '#1a2a4a', margin: 0, lineHeight: '1.3' }}>{feature.title}</h5>
                           </div>
-                          <h5 style={{ fontSize: '16px', fontWeight: '700', color: '#1a2a4a', marginBottom: '10px' }}>{feature.title}</h5>
-                          <p style={{ fontSize: '13px', color: '#4a5568', margin: 0, lineHeight: '1.5' }}>{feature.desc}</p>
+                          <p style={{ fontSize: '13.5px', color: '#4a5568', margin: 0, lineHeight: '1.6' }}>{feature.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -1131,12 +1133,14 @@ const SmartHospitals = () => {
                       { icon: 'bx-heart', title: 'Better Patient Care', desc: 'Ensures the right medicine is delivered at the right time for the right patient.' }
                     ].map((benefit, i) => (
                       <div className="col-md-4 col-sm-6" key={i}>
-                        <div style={{ background: '#f8fafc', borderRadius: '20px', padding: 'clamp(10px, 3vw, 25.0px) clamp(10px, 3vw, 20.0px)', height: '100%', border: '1px solid #e2e8f0', transition: 'all 0.3s ease' }} className="hover-shadow">
-                          <div style={{ width: '45px', height: '45px', borderRadius: '12px', background: 'rgba(192,0,26,0.1)', color: '#c0001a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'clamp(15px, 3vw, 22.0px)', marginBottom: '15px' , flexWrap: 'wrap'}}>
-                            <i className={`bx ${benefit.icon}`}></i>
+                        <div style={{ background: '#f8fafc', borderRadius: '20px', padding: 'clamp(18px, 3vw, 25.0px)', height: '100%', border: '1px solid #e2e8f0', transition: 'all 0.3s ease', display: 'flex', flexDirection: 'column' }} className="hover-shadow">
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
+                            <div style={{ width: '45px', height: '45px', minWidth: '45px', borderRadius: '12px', background: 'rgba(192,0,26,0.1)', color: '#c0001a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'clamp(18px, 3vw, 22.0px)', flexShrink: 0 }}>
+                              <i className={`bx ${benefit.icon}`}></i>
+                            </div>
+                            <h5 style={{ fontSize: '16px', fontWeight: '800', color: '#1a2a4a', margin: 0, lineHeight: '1.3' }}>{benefit.title}</h5>
                           </div>
-                          <h5 style={{ fontSize: '16px', fontWeight: '700', color: '#1a2a4a', marginBottom: '10px' }}>{benefit.title}</h5>
-                          <p style={{ fontSize: '13px', color: '#4a5568', margin: 0, lineHeight: '1.5' }}>{benefit.desc}</p>
+                          <p style={{ fontSize: '13.5px', color: '#4a5568', margin: 0, lineHeight: '1.6' }}>{benefit.desc}</p>
                         </div>
                       </div>
                     ))}

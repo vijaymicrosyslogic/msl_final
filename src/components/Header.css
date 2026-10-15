@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
 
 /* ========================================================
    GLOBAL HEADER CONTAINER
@@ -10,64 +10,56 @@
   left: 0;
   z-index: 1000;
   font-family: 'Manrope', sans-serif;
-  background: #ffffff;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.25s ease, background 0.25s ease;
-}
-
-.new-header-container.scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .nav-container {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1290px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 clamp(16px, 2vw, 28px);
-  height: 100%;
+  padding: 0 20px;
 }
 
-/* ── Top Bar Row ── */
+/* ── TOP ROW ── */
 .header-top {
-  height: 58px;
+  height: 56px;
   border-bottom: 1px solid #eaecf4;
   background: #ffffff;
   position: relative;
-  z-index: 10;
+  z-index: 2;
 }
 
-/* ── Logo ── */
+.header-top .nav-container {
+  height: 100%;
+}
+
 .nav-logo {
+  margin-right: 0;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   text-decoration: none;
-  flex-shrink: 0;
-  transition: opacity 0.2s ease;
-}
-
-.nav-logo:hover {
-  opacity: 0.9;
 }
 
 .nav-logo img {
-  max-height: 26px;
+  max-height: 24px;
   width: auto;
-  display: block;
 }
 
 .logo-text {
-  font-size: 16.5px;
+  font-size: 16px;
   font-weight: 800;
-  color: #1a2744;
-  letter-spacing: -0.4px;
+  color: #1a2a4a;
+  letter-spacing: -0.5px;
   font-family: 'Manrope', sans-serif;
 }
 
 /* ========================================================
-   DESKTOP NAVIGATION (>= 1200px)
+   ORIGINAL DESKTOP NAVIGATION (Equidistant & Flexible)
 ======================================================== */
 .top-links {
   display: flex;
@@ -75,15 +67,15 @@
   justify-content: center;
   flex: 1;
   gap: clamp(2px, 0.6vw, 10px);
-  margin: 0 clamp(10px, 1.6vw, 24px);
+  margin: 0 clamp(8px, 1.2vw, 24px);
 }
 
 .top-links a {
   font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #2d3a5a;
+  letter-spacing: 0.5px;
+  color: #2D3A5A;
   text-decoration: none;
   padding: 8px clamp(6px, 0.75vw, 12px);
   border-radius: 6px;
@@ -91,10 +83,9 @@
   white-space: nowrap;
 }
 
-.top-links a:hover,
-.top-links a.active-link {
-  color: #E2313F;
-  background: rgba(226, 49, 63, 0.06);
+.top-links a:hover {
+  color: #c0001a;
+  background: rgba(192, 0, 26, 0.06);
 }
 
 .top-actions {
@@ -104,72 +95,86 @@
   gap: 12px;
 }
 
-/* Desktop Search / Quick Menu Button */
+/* Search / Explore Button */
 .srch-btn {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 8px;
-  border: 1.5px solid #dbe2ee;
-  background: #f8fafc;
+  border: 1.5px solid #c8cfe0;
+  background: #f5f6fb;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1a2744;
+  color: #2d3a5a;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s;
 }
 
 .srch-btn:hover {
-  border-color: #E2313F;
-  color: #E2313F;
+  border-color: #c0001a;
+  color: #c0001a;
   background: #fff5f5;
 }
 
 .srch-btn i {
-  font-size: 18px;
+  font-size: 16px;
 }
 
-/* ── Desktop Dropdown Container ── */
+/* Dropdown Container */
 .nav-dropdown {
   position: relative;
   display: flex;
   align-items: center;
   height: 100%;
+  margin-right: 0;
 }
 
+/* Category Links */
 .nav-dropdown > a {
   font-family: 'Inter', sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 500;
-  color: #2d3a5a;
+  letter-spacing: 0.5px;
+  color: #2D3A5A;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   padding: 8px clamp(6px, 0.75vw, 12px);
   border-radius: 6px;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
+.nav-dropdown > a > i:first-child {
+  font-size: 14px;
+  color: #999;
+  opacity: 0.8;
+  transition: color 0.2s;
+}
+
 .nav-dropdown > a .ch-icon {
-  font-size: 10px;
-  color: #94a3b8;
-  transition: transform 0.2s ease, color 0.2s ease;
+  font-size: 9px;
+  color: #aaa;
+  margin-left: 2px;
+  transition: transform 0.2s;
 }
 
 .nav-dropdown:hover > a,
-.nav-dropdown > a.active-link {
-  color: #E2313F;
-  background: rgba(226, 49, 63, 0.06);
+.nav-dropdown > a:hover {
+  color: #c0001a;
+  background: rgba(192, 0, 26, 0.06);
+}
+
+.nav-dropdown:hover > a > i:first-child {
+  color: #c0001a;
 }
 
 .nav-dropdown:hover > a .ch-icon {
   transform: rotate(180deg);
-  color: #E2313F;
 }
 
-/* Invisible bridge for hover */
+/* Dropdown Menu Styling */
 .nav-dropdown::after {
   content: '';
   position: absolute;
@@ -179,28 +184,23 @@
   height: 15px;
 }
 
-/* Desktop Dropdown Flyout */
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + 5px);
   left: 0;
-  background: #ffffff;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
-  border-top: 3px solid #E2313F;
-  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
-  padding: 8px;
+  background: #fff;
+  border-radius: 8px;
+  border-bottom: 3px solid #c0001a;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  padding: 8px 0;
   min-width: 320px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.25s;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  gap: 2px;
 }
 
 .nav-dropdown:last-child .nav-dropdown-menu {
@@ -214,93 +214,62 @@
   transform: translateY(0);
 }
 
-/* Desktop Dropdown Overview Link */
-.dropdown-overview-link {
-  display: flex !important;
+.nav-dropdown-menu a {
+  padding: 12px 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #2D3A5A;
+  text-decoration: none;
+  white-space: normal;
+  display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 14px !important;
-  background: #fff5f5 !important;
-  border-radius: 8px !important;
-  border: 1px solid #fecaca;
-  color: #991b1b !important;
-  text-decoration: none;
-  margin-bottom: 4px;
-  transition: all 0.2s ease !important;
+  line-height: 1.5;
+  border-radius: 0;
+  border-bottom: 1px solid #f0f2f8;
+  transition: all 0.2s ease;
 }
 
-.dropdown-overview-link:hover {
-  background: #fee2e2 !important;
-  border-color: #fca5a5 !important;
-  transform: translateX(3px);
-}
-
-.dropdown-overview-link i {
-  font-size: 18px;
-  color: #E2313F;
-}
-
-.dropdown-overview-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdown-overview-title {
-  font-family: 'Manrope', sans-serif;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #1a2744;
-}
-
-.dropdown-overview-sub {
-  font-size: 11px;
-  color: #64748b;
-  font-weight: 400;
-}
-
-.dropdown-menu-divider {
-  height: 1px;
-  background: #f1f5f9;
-  margin: 4px 6px;
-}
-
-.nav-dropdown-menu a {
-  padding: 9px 12px;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: #334155;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-radius: 6px;
-  transition: all 0.18s ease;
-  line-height: 1.4;
+.nav-dropdown-menu a:last-child {
+  border-bottom: none;
 }
 
 .nav-dropdown-menu a i {
-  font-size: 15px;
-  color: #94a3b8;
-  transition: color 0.18s ease, transform 0.18s ease;
+  font-size: 18px;
+  color: #999;
+  opacity: 0.8;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .nav-dropdown-menu a:hover {
-  background: #f8fafc;
-  color: #E2313F;
-  padding-left: 16px;
+  background: #fdfdfd;
+  color: #c0001a;
+  padding-left: 30px;
 }
 
 .nav-dropdown-menu a:hover i {
-  color: #E2313F;
   transform: scale(1.1);
+  color: #c0001a;
+  opacity: 1;
 }
 
 /* ========================================================
-   RESPONSIVE TOGGLES & VISIBILITY
+   RESPONSIVE TOGGLES & MOBILE DRAWER STYLES
 ======================================================== */
 .mobile-only {
   display: none !important;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #1a2a4a;
+  cursor: pointer;
+  padding: 5px;
 }
 
 .mobile-menu-backdrop,
@@ -309,7 +278,7 @@
 }
 
 /* ========================================================
-   MOBILE STYLING (< 1200px)
+   MOBILE ONLY VIEW (< 1200px)
 ======================================================== */
 @media (max-width: 1199px) {
   .desktop-only {
@@ -324,6 +293,7 @@
     justify-content: center;
     position: relative;
     height: 100%;
+    padding: 0 16px;
   }
 
   /* Hamburger Menu Toggle Button (Left) */
@@ -444,6 +414,7 @@
     transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
     overflow: hidden;
+    touch-action: pan-y;
   }
 
   .mobile-menu-drawer.active {
@@ -529,7 +500,7 @@
     padding: 16px 16px calc(24px + env(safe-area-inset-bottom));
   }
 
-  /* Sleek Drawer Scrollbar */
+  /* Drawer Scrollbar */
   .drawer-body::-webkit-scrollbar {
     width: 4px;
   }
@@ -561,7 +532,7 @@
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 14px;
     font-weight: 600;
     color: #1a2744;
@@ -598,7 +569,6 @@
     letter-spacing: 0.08em;
     color: #94a3b8;
     text-transform: uppercase;
-    font-family: 'Inter', sans-serif;
   }
 
   /* ── Solutions Accordion Cards ── */
@@ -714,7 +684,7 @@
     background: #fafbfc;
   }
 
-  /* ── CRITICAL FEATURE: DIRECT OVERVIEW BANNER ── */
+  /* ── DIRECT OVERVIEW BANNER (Mobile Only) ── */
   .cat-overview-banner {
     display: flex;
     align-items: center;
@@ -795,7 +765,6 @@
     gap: 10px;
     padding: 9px 12px;
     border-radius: 7px;
-    font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-weight: 500;
     color: #334155;

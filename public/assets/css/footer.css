@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-# Footer
+# Modern Flexible Responsive Footer - MicroSysLogic
 --------------------------------------------------------------*/
 #footer {
   color: #94a3b8;
@@ -9,180 +9,289 @@
 }
 
 #footer .footer-top {
-  padding: 60px 0 30px 0;
+  padding: 56px 0 40px 0;
   background: #0f172a;
 }
 
-#footer .footer-top .footer-contact {
-  margin-bottom: 30px;
+/* ========================================================
+   FLEXIBLE CONTAINER & COLUMN DISTRIBUTION
+======================================================== */
+.footer-columns-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: clamp(20px, 2.8vw, 48px);
+  width: 100%;
 }
 
-#footer .footer-top .footer-contact h3 {
+/* Column 1: Brand & Contact Info */
+.footer-col-contact {
+  flex: 0 1 310px;
+  min-width: 250px;
+}
+
+/* Column 2: Useful Links */
+.footer-col-links {
+  flex: 0 1 auto;
+  min-width: 130px;
+}
+
+/* Column 3: Quick Links / Products */
+.footer-col-products {
+  flex: 0 1 auto;
+  min-width: 170px;
+}
+
+/* Column 4: 6 Training Programs */
+.footer-col-training {
+  flex: 0 1 370px;
+  min-width: 270px;
+  max-width: 390px;
+}
+
+/* ========================================================
+   BRAND & CONTACT ITEM STYLING
+======================================================== */
+.footer-col-contact h3 {
   font-size: 26px;
-  line-height: 1;
+  line-height: 1.2;
   font-weight: 800;
   color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  font-family: 'Manrope', sans-serif;
 }
 
-#footer .footer-top .footer-contact h3 span {
-  color: #E2313F;
-}
-
-#footer .footer-top .footer-contact p {
+.footer-col-contact p {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
+  color: #94a3b8;
+  font-family: 'Inter', sans-serif;
 }
 
+.footer-col-contact p strong {
+  color: #ffffff;
+}
+
+/* ========================================================
+   HEADINGS & RED ACCENT
+======================================================== */
 #footer .footer-top h4 {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 15.5px;
+  font-weight: 700;
   color: #ffffff;
   position: relative;
   padding-bottom: 12px;
+  margin-bottom: 18px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 #footer .footer-top h4::after {
   content: "";
   position: absolute;
   display: block;
-  width: 20px;
+  width: 24px;
   height: 2px;
   background: #E2313F;
   bottom: 0;
   left: 0;
+  border-radius: 2px;
 }
 
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-links ul {
+/* ========================================================
+   NAVIGATION LINK LISTS
+======================================================== */
+.footer-col ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-#footer .footer-top .footer-links ul i {
-  padding-right: 2px;
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 1;
-}
-
-#footer .footer-top .footer-links ul li {
-  padding: 10px 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 9px;
 }
 
-#footer .footer-top .footer-links ul li:first-child {
-  padding-top: 0;
+.footer-col ul li {
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
 }
 
-#footer .footer-top .footer-links ul a {
-  color: #cbd5e1;
-  transition: 0.3s;
-  display: inline-block;
+.footer-col ul i {
+  color: #ffffff; /* White arrow icons matching screenshot */
+  font-size: 14px;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  margin-top: -1px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-#footer .footer-top .footer-links ul a:hover {
+.footer-col ul a {
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+  display: inline-block;
+  line-height: 20px;
+  font-size: 13.5px;
+  font-family: 'Inter', sans-serif;
   text-decoration: none;
+}
+
+.footer-col ul li:hover a,
+.footer-col ul a:hover {
+  color: #E2313F;
+  text-decoration: none;
+}
+
+.footer-col ul li:hover i {
+  transform: translateX(3px);
   color: #E2313F;
 }
 
-#footer .footer-newsletter {
-  font-size: 15px;
+/* ========================================================
+   FOOTER BOTTOM BAR & SOCIAL LINKS
+======================================================== */
+#footer .footer-bottom {
+  padding: 22px 0;
+  background: #090e1a;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-#footer .footer-newsletter h4 {
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-  padding-bottom: 12px;
+.footer-bottom-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-#footer .footer-newsletter form {
-  margin-top: 30px;
-  background: #fff;
-  padding: 5px 10px;
-  position: relative;
-  border-radius: 4px;
-  text-align: left;
+#footer .copyright {
+  color: #94a3b8;
+  font-size: 13.5px;
+  font-family: 'Inter', sans-serif;
 }
 
-#footer .footer-newsletter form input[type="email"] {
-  border: 0;
-  padding: 4px 8px;
-  width: calc(100% - 100px);
+#footer .copyright span {
+  color: #ffffff;
 }
 
-#footer .footer-newsletter form input[type="submit"] {
-  position: absolute;
-  top: 0;
-  right: -1px;
-  bottom: 0;
-  border: 0;
-  background: none;
-  font-size: 16px;
-  padding: 0 20px;
-  background: #E2313F;
-  color: #fff;
-  transition: 0.3s;
-  border-radius: 0 4px 4px 0;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-#footer .footer-newsletter form input[type="submit"]:hover {
-  background: #E2313F;
-}
-
-#footer .credits {
-  padding-top: 5px;
-  font-size: 13px;
+#footer .social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 #footer .social-links a {
-  font-size: 18px;
-  display: inline-block;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #1e293b;
   color: #ffffff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 4px;
-  text-align: center;
   width: 36px;
   height: 36px;
-  transition: 0.3s;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  text-decoration: none;
 }
 
 #footer .social-links a:hover {
   background: #E2313F;
-  color: #fff;
-  text-decoration: none;
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
-/* --- MOBILE SPECIFIC STYLES --- */
-@media (max-width: 768px) {
-  #footer .footer-top .footer-contact,
-  #footer .footer-top .footer-links,
-  #footer .footer-newsletter,
-  #footer .copyright,
-  #footer .credits,
-  #footer .social-links {
+/* ========================================================
+   RESPONSIVE LAYOUTS FOR ALL DEVICES
+======================================================== */
+
+/* Tablet & Compact Desktop (640px to 991px) */
+@media (max-width: 991px) and (min-width: 640px) {
+  .footer-columns-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px clamp(24px, 4vw, 48px);
+    flex-wrap: wrap;
+  }
+
+  .footer-col-contact,
+  .footer-col-links,
+  .footer-col-products,
+  .footer-col-training {
+    flex: none;
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* Large Phone / Small Tablet (460px to 639px) */
+@media (max-width: 639px) and (min-width: 460px) {
+  .footer-columns-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+  }
+
+  .footer-col-contact {
+    grid-column: 1 / -1;
+  }
+
+  .footer-col-links {
+    grid-column: 1 / 2;
+  }
+
+  .footer-col-products {
+    grid-column: 2 / 3;
+  }
+
+  .footer-col-training {
+    grid-column: 1 / -1;
+  }
+
+  .footer-col-contact,
+  .footer-col-links,
+  .footer-col-products,
+  .footer-col-training {
+    flex: none;
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* Small Mobile (< 460px) */
+@media (max-width: 459px) {
+  .footer-top {
+    padding: 44px 0 32px 0;
+  }
+
+  .footer-columns-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .footer-col-contact,
+  .footer-col-links,
+  .footer-col-products,
+  .footer-col-training {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: none;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-  }
-
-  #footer .footer-top h4::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  #footer .footer-top .footer-links ul li {
-    justify-content: center;
+    gap: 12px;
   }
 }
-
