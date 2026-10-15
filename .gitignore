@@ -25,3 +25,6 @@ dist-ssr
 
 # Agents directory
 .agents/
+
+# Scratch temporary files
+scratch/

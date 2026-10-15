@@ -30,12 +30,11 @@ const Footer = () => {
             <div className="col-lg-3 col-md-6 footer-links">
               <h4>Quick Links</h4>
               <ul>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/products/manufacturing">Manufacturing</Link></li>
+                <li><i className="bx bx-chevron-right"></i> <Link to="/products/automations">Automations</Link></li>
                 <li><i className="bx bx-chevron-right"></i> <Link to="/products/ai">AI Solutions</Link></li>
                 <li><i className="bx bx-chevron-right"></i> <Link to="/products/defense">Defense</Link></li>
                 <li><i className="bx bx-chevron-right"></i> <Link to="/products/renewable">Renewable Energy</Link></li>
                 <li><i className="bx bx-chevron-right"></i> <Link to="/products/hospitals">Smart Hospitals</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/products/customization">Customization</Link></li>
               </ul>
             </div>
           </div>

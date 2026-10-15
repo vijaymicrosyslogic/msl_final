@@ -1,185 +1,210 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { TRAINING_PROGRAMS, TRAINING_DIFFERENTIATORS, TRAINER_CONTACT } from '../data/trainingData';
 import './TrainingPrograms.css';
 
 const TrainingPrograms = () => {
-  const [activeTab, setActiveTab] = useState('embedded');
-  const [isVisible, setIsVisible] = useState({});
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setIsVisible(prev => ({ ...prev, [entry.target.id]: true }));
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  const programs = {
-    embedded: {
-      title: 'Industrial Embedded Software Training Program',
-      subtitle: 'Master Embedded Systems from Silicon to Software',
-      duration: '12 Weeks',
-      mode: 'Hybrid (Online + Lab)',
-      level: 'Beginner to Advanced',
-      certification: 'MicroSysLogic Certified',
-      image: '/assets/img/training/embedded_training.jpg',
-      description: 'A comprehensive industrial training program covering the complete embedded software lifecycle — from chip architecture to RTOS programming, Automotive protocols, and hands-on hardware projects. Taught by engineers with 25+ years of industrial experience.',
-      highlights: [
-        { icon: 'bi-cpu', text: 'Hands-on with STM32, ARM Cortex & Industrial SoCs' },
-        { icon: 'bi-car-front', text: 'Automotive-focused: CAN Bus, SoC (SystemOnChip) & Wireless Comm.' },
-        { icon: 'bi-terminal', text: 'Embedded C, RTOS concepts & Cross-Compiler workflows' },
-        { icon: 'bi-motherboard', text: 'Hardware Interfaces: UART, I2C, CAN & IoT to Cloud' },
-      ],
-      coreBasics: [
-        'Various market segments and end use cases',
-        'Life Cycle of Chip design and SW bring-up',
-      ],
-      specialization: [
-        'Basics of Microprocessor',
-        'Micro Controller Architecture',
-        'Basics of ARM Cortex',
-        'Hardware Familiarization and interfaces',
-        'Basics of Low Speed devices (UART/I2C) and High Speed devices (CAN)',
-        'Embedded RTOS concepts and programming',
-        'Special attention on SoC (SystemOnChip) for Automotive',
-        'IoT Communication from Hardware to Cloud',
-        'Different types of Wireless comm. (Zigbee & WiFi) used in Automotive',
-        'Cross Compilers and various stages from Programming to Execution on Hardware',
-      ],
-      handsOn: [
-        'Embedded Boards with IDE',
-        'Embedded C based Programming',
-        'Develop IoT based project with Operating System on Hardware (ESP32/WiFi/ZigBee)',
-        'STM32 Boards',
-        'Get Good Understanding of Peripherals Communication',
-        'IoT with Cloud data',
-      ],
-      processors: ['TI', 'Broadcom', 'Renesas', 'Qualcomm', 'ST', 'ARM', 'Intel'],
-      domains: ['Mobile SW', 'Pre/Post Silicon Validation', 'FPGA', 'Automotive', 'IoT'],
+  const benefitsTables = [
+    {
+      id: 'students',
+      tag: 'CAREER & SKILLS',
+      title: 'Benefits to Students / Engineers',
+      icon: 'bi-person-workspace',
+      themeClass: 'tp-benefit--students',
+      summary: 'Master real embedded hardware, build working prototypes, and gain placement-ready confidence.',
+      rows: [
+        {
+          area: 'Senior Mentorship',
+          detail: 'Learn directly from senior industry experts with 28+ years of tier-1 corporate experience.'
+        },
+        {
+          area: 'Hands-on Exposure',
+          detail: 'Hands-on exposure to physical hardware boards, tools, firmware development, and debugging.'
+        },
+        {
+          area: 'Prototype Independence',
+          detail: 'Build confidence to independently develop Embedded / IoT / Wireless product prototypes.'
+        },
+        {
+          area: 'Campus & Off-Campus Jobs',
+          detail: 'Prepare students to crack top technical interviews both in-campus and off-campus.'
+        },
+        {
+          area: 'Interview Guidance',
+          detail: 'Interview-oriented guidance with practical concepts, tips, and common industry technical questions.'
+        },
+        {
+          area: 'Industry Tech Stack',
+          detail: 'Develop industry-relevant skills across ARM Cortex, STM32, Embedded C, RTOS, Linux, Zigbee & FPGA.'
+        },
+        {
+          area: 'Career Readiness',
+          detail: 'Strengthen fundamentals and problem-solving skills for career readiness beyond graduation.'
+        }
+      ]
     },
-    iot: {
-      title: 'IoT Training Program',
-      subtitle: 'Build Connected Systems from Edge to Cloud',
-      duration: '8 Weeks',
-      mode: 'Hybrid (Online + Lab)',
-      level: 'Beginner to Intermediate',
-      certification: 'MicroSysLogic Certified',
-      image: '/assets/img/training/iot_training.jpg',
-      description: 'A focused training program on Internet of Things product design — from embedded microcontrollers and communication protocols to cloud development, data dashboards, and wireless communication. Build real IoT projects with industry-grade hardware.',
-      highlights: [
-        { icon: 'bi-lightbulb', text: 'Product Design for IoT Solutions' },
-        { icon: 'bi-cloud-arrow-up', text: 'Cloud Development: PostgreSQL & Data Maintenance' },
-        { icon: 'bi-wifi', text: 'Multiple Wireless Communication Protocols' },
-        { icon: 'bi-bar-chart-line', text: 'Dashboard to Visualize Real-time Data' },
-      ],
-      coreBasics: [
-        'Product Design for IoT Solutions',
-      ],
-      specialization: [
-        'Basics of Microprocessor',
-        'Micro Controller Architecture',
-        'Communication Protocols',
-        'Cloud Development: PostgreSQL and Data Maintenance',
-        'IoT Communication from Hardware to Cloud',
-        'Different types of Wireless communication',
-        'Dashboard to visualize Data',
-      ],
-      handsOn: [
-        'Embedded Boards with IDE',
-        'Develop IoT based project with Operating System on Hardware (ESP32/WiFi/ZigBee)',
-        'STM32 Boards',
-      ],
-      processors: ['ESP32', 'STM32'],
-      domains: ['IoT', 'Smart Office', 'Industrial IoT', 'Connected Devices'],
+    {
+      id: 'colleges',
+      tag: 'ACADEMIC EXCELLENCE',
+      title: 'Benefits to Engineering Colleges / Universities',
+      icon: 'bi-buildings',
+      themeClass: 'tp-benefit--colleges',
+      summary: 'Bridge academic theory with industry practice and elevate institution placement statistics.',
+      rows: [
+        {
+          area: 'Academic-Industry Bridge',
+          detail: 'Bridges the gap between academic theory and real-world commercial industry requirements.'
+        },
+        {
+          area: 'Practical Hardware Lab',
+          detail: 'Practical hardware exposure and hands-on lab experiments beyond conventional classroom theory.'
+        },
+        {
+          area: 'Multi-Branch Customization',
+          detail: 'Programs customized for ECE, EEE, CSE, IoT, Mechatronics, and Mechanical Automation students.'
+        },
+        {
+          area: 'Employability & Projects',
+          detail: 'Strengthens capstone project development, technical interview prep, and placement readiness.'
+        },
+        {
+          area: 'Industry Tools & Methods',
+          detail: 'Introduces students to industry IDEs, hardware debugging, and product engineering approaches.'
+        },
+        {
+          area: 'Industry-Ready Graduates',
+          detail: 'Supports colleges in building high-employability, industry-ready engineering graduates.'
+        },
+        {
+          area: 'Curriculum Advisory',
+          detail: 'Advises faculty and boards of studies to update curriculum in alignment with market needs.'
+        }
+      ]
+    },
+    {
+      id: 'corporates',
+      tag: 'ENTERPRISE VELOCITY',
+      title: 'Benefits to Corporates & R&D Teams',
+      icon: 'bi-briefcase-fill',
+      themeClass: 'tp-benefit--corporates',
+      summary: 'Accelerate hardware bring-up, minimize project blockers, and upskill engineering teams.',
+      rows: [
+        {
+          area: 'Close Skill Gaps',
+          detail: 'Close gaps between current engineer skills and cutting-edge technologies needed for active projects.'
+        },
+        {
+          area: 'Customized to Platforms',
+          detail: 'Customize syllabus specifically to your company hardware platforms, chipsets, and project stacks.'
+        },
+        {
+          area: 'Core Embedded & RTOS Skills',
+          detail: 'Build hands-on proficiency in STM32, FreeRTOS, Zigbee wireless, and AMD Xilinx Zynq FPGA.'
+        },
+        {
+          area: 'Bring-up & System Debugging',
+          detail: 'Strengthen hardware bring-up, register debugging, bus protocols, and system integration.'
+        },
+        {
+          area: 'Prototype to Testing',
+          detail: 'Apply learning directly to active project milestones from early prototyping through production.'
+        },
+        {
+          area: 'Reduce Rework & Blockers',
+          detail: 'Help cross-functional teams reduce design rework and quickly overcome technical bottlenecks.'
+        },
+        {
+          area: 'Continuous Advisory',
+          detail: 'Provide ongoing technical mentorship and expert consulting as engineers roll out new products.'
+        }
+      ]
     }
-  };
-
-  const activeProgram = programs[activeTab];
+  ];
 
   return (
-    <>
+    <div className="tp-main-page">
       {/* ═══════════════════ HERO SECTION ═══════════════════ */}
       <section className="tp-hero">
         <div className="tp-hero__bg">
-          <img src="/assets/img/training/hero_bg.jpg" alt="" />
+          <img src="/assets/img/training/hero_bg.jpg" alt="MicroSysLogic Training Facility" />
           <div className="tp-hero__overlay" />
         </div>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="tp-hero__grid">
-            {/* Left — Text Content */}
+            {/* Left — Content */}
             <div className="tp-hero__content">
               <div className="tp-hero__badge">
                 <i className="bi bi-mortarboard-fill" />
-                <span>SKILL DEVELOPMENT PROGRAMS</span>
+                <span>SKILL DEVELOPMENT & INDUSTRIAL TRAINING</span>
               </div>
               <h1 className="tp-hero__title">
-                Industrial Embedded<br />
-                <span>Skill Development</span> Training
+                Industrial Embedded &<br />
+                <span>Advanced Tech</span> Training
               </h1>
               <p className="tp-hero__subtitle">
-                Specialized advance training programs in Embedded Systems with integrated AI,
-                Automotive, Chip Validation & Mobile — taught by engineers with <strong>25+ years</strong> of
-                industrial expertise.
+                6 specialized, hands-on training programs spanning <strong>Advanced Embedded IoT, Cloud IoT, Wireless RF, FreeRTOS, Raspberry Pi SoC & AMD Xilinx Zynq FPGA</strong> — designed and taught by industry architects with <strong>28+ years</strong> of product development experience.
               </p>
+              
               <div className="tp-hero__stats">
                 <div className="tp-hero__stat">
-                  <div className="tp-hero__stat-number">25+</div>
-                  <div className="tp-hero__stat-label">Years Expert<br/>Training</div>
+                  <div className="tp-hero__stat-number">28+</div>
+                  <div className="tp-hero__stat-label">Years Expert<br />Training</div>
+                </div>
+                <div className="tp-hero__stat-divider" />
+                <div className="tp-hero__stat">
+                  <div className="tp-hero__stat-number">6</div>
+                  <div className="tp-hero__stat-label">Specialized<br />Programs</div>
                 </div>
                 <div className="tp-hero__stat-divider" />
                 <div className="tp-hero__stat">
                   <div className="tp-hero__stat-number">100%</div>
-                  <div className="tp-hero__stat-label">Hands-on<br/>Hardware</div>
-                </div>
-                <div className="tp-hero__stat-divider" />
-                <div className="tp-hero__stat">
-                  <div className="tp-hero__stat-number">2</div>
-                  <div className="tp-hero__stat-label">Specialized<br/>Programs</div>
+                  <div className="tp-hero__stat-label">Hands-on<br />Hardware</div>
                 </div>
                 <div className="tp-hero__stat-divider" />
                 <div className="tp-hero__stat">
                   <div className="tp-hero__stat-number">
                     <i className="bi bi-patch-check-fill" style={{ fontSize: '28px' }} />
                   </div>
-                  <div className="tp-hero__stat-label">Industry<br/>Certified</div>
+                  <div className="tp-hero__stat-label">Industry<br />Certified</div>
                 </div>
               </div>
+
               <div className="tp-hero__actions">
-                <a href="#programs" className="tp-btn tp-btn--primary">
-                  <i className="bi bi-arrow-down-circle" /> Explore Programs
+                <a href="#programs-grid" className="tp-btn tp-btn--primary tp-btn--lg">
+                  <i className="bi bi-grid-3x3-gap-fill" /> Explore 6 Programs
                 </a>
-                <Link to="/contact" className="tp-btn tp-btn--outline">
-                  <i className="bi bi-envelope" /> Enquire Now
+                <Link to="/contact" className="tp-btn tp-btn--outline tp-btn--lg">
+                  <i className="bi bi-envelope" /> Enquire for Next Batch
                 </Link>
+                <a href={`tel:${TRAINER_CONTACT.phoneRaw}`} className="tp-btn tp-btn--glass tp-btn--lg">
+                  <i className="bi bi-telephone-fill" /> {TRAINER_CONTACT.phone}
+                </a>
               </div>
             </div>
 
             {/* Right — Hero Image */}
             <div className="tp-hero__image-wrapper">
-              <img src="/assets/img/training/career_growth.jpg" alt="Career Growth" className="tp-hero__image" />
-              <div className="tp-hero__image-glow"></div>
+              <img 
+                src="/assets/img/training/career_growth.jpg" 
+                alt="Career Growth through MicroSysLogic Industrial Training" 
+                className="tp-hero__image" 
+              />
+              <div className="tp-hero__image-glow" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════ TRAINING PATH - IMAGE INFOGRAPHIC ═══════════════════ */}
-      <section className="tp-image-infographic" id="path" data-animate>
+      {/* ═══════════════════ TRAINING PATH INFOGRAPHIC ═══════════════════ */}
+      <section className="tp-image-infographic" id="path">
         <div className="container">
           <div className="infographic-layout">
-            {/* Left — Text */}
             <div className="infographic-text">
               <span className="infographic-tag">
                 <span className="infographic-tag__line" />
-                TRAINING PROGRAM
+                LEARNING PATHWAY
               </span>
               <h2 className="infographic-heading">
                 From <span>Learner</span> to<br />
@@ -187,10 +212,14 @@ const TrainingPrograms = () => {
                 Engineer
               </h2>
               <p className="infographic-subtext">
-                A structured, step-by-step journey — from foundational embedded concepts to real industry-grade hardware projects.
+                A structured, step-by-step evolution — transforming theoretical foundation into hands-on board bring-up, real-time multitasking, and production-grade product development.
               </p>
+              <div style={{ marginTop: '24px' }}>
+                <a href="#programs-grid" className="tp-btn tp-btn--primary">
+                  View Programs Below <i className="bi bi-arrow-down" />
+                </a>
+              </div>
             </div>
-            {/* Right — Image */}
             <div className="infographic-img-wrap">
               <img
                 src="/assets/img/training/infographic_staircase_new.jpg"
@@ -202,183 +231,268 @@ const TrainingPrograms = () => {
         </div>
       </section>
 
-      {/* ═══════════════════ PROGRAMS SECTION ═══════════════════ */}
-      <section className="tp-programs" id="programs" data-animate>
+      {/* ═══════════════════ PROGRAM BENEFITS (3 TABLES) ═══════════════════ */}
+      <section className="tp-benefits-section" id="benefits">
         <div className="container">
-          <div className="tp-section-header">
-            <span className="tp-section-tag">OUR PROGRAMS</span>
-            <h2 className="tp-section-title">Choose Your <span>Training Track</span></h2>
-            <p className="tp-section-desc">Two specialized programs designed to make you industry-ready with hands-on experience on real hardware platforms.</p>
+          <div className="tp-benefits-header text-center">
+            <span className="tp-section-tag" style={{ background: 'rgba(226, 49, 63, 0.08)', color: '#c0001a' }}>
+              <i className="bi bi-stars" style={{ marginRight: '6px' }} /> KEY ADVANTAGES
+            </span>
+            <h2 className="tp-benefits-main-title">
+              How Our Training Programs <span>Benefit You</span>
+            </h2>
+            <p className="tp-benefits-main-desc">
+              Tailored outcomes, practical hardware exposure, and proven career-defining skills delivered across students, institutions, and enterprises.
+            </p>
           </div>
 
-          {/* Tab Switcher */}
-          <div className="tp-tab-switcher">
-            <button
-              className={`tp-tab-btn ${activeTab === 'embedded' ? 'active' : ''}`}
-              onClick={() => setActiveTab('embedded')}
-            >
-              <i className="bi bi-cpu-fill" />
-              <span>Embedded Software Training</span>
-            </button>
-            <button
-              className={`tp-tab-btn ${activeTab === 'iot' ? 'active' : ''}`}
-              onClick={() => setActiveTab('iot')}
-            >
-              <i className="bi bi-cloud-arrow-up-fill" />
-              <span>IoT Training Program</span>
-            </button>
-          </div>
-
-          {/* Program Detail Card */}
-          <div className="tp-program-detail" key={activeTab}>
-            {/* Top Overview */}
-            <div className="tp-program-overview">
-              <div className="tp-program-overview__img">
-                <img src={activeProgram.image} alt={activeProgram.title} />
-                <div className="tp-program-overview__img-overlay">
-                  <span className="tp-program-overview__badge-tag">
-                    <i className="bi bi-mortarboard-fill" /> {activeProgram.certification}
-                  </span>
-                </div>
-              </div>
-              <div className="tp-program-overview__info">
-                <h3 className="tp-program-overview__title">{activeProgram.title}</h3>
-                <p className="tp-program-overview__desc">{activeProgram.description}</p>
-                <div className="tp-program-overview__meta">
-                  <div className="tp-meta-item">
-                    <i className="bi bi-calendar3" />
-                    <div><small>Duration</small><strong>{activeProgram.duration}</strong></div>
+          <div className="tp-benefits-grid">
+            {benefitsTables.map((table) => (
+              <div className={`tp-benefit-card ${table.themeClass}`} key={table.id}>
+                <div className="tp-benefit-card__header">
+                  <div className="tp-benefit-card__badge-row">
+                    <span className="tp-benefit-card__tag">{table.tag}</span>
                   </div>
-                  <div className="tp-meta-item">
-                    <i className="bi bi-laptop" />
-                    <div><small>Mode</small><strong>{activeProgram.mode}</strong></div>
-                  </div>
-                  <div className="tp-meta-item">
-                    <i className="bi bi-bar-chart-steps" />
-                    <div><small>Level</small><strong>{activeProgram.level}</strong></div>
-                  </div>
-                </div>
-
-                {/* Key Highlights */}
-                <div className="tp-program-highlights">
-                  {activeProgram.highlights.map((h, i) => (
-                    <div className="tp-highlight-item" key={i}>
-                      <div className="tp-highlight-icon"><i className={`bi ${h.icon}`} /></div>
-                      <span>{h.text}</span>
+                  <div className="tp-benefit-card__title-row">
+                    <div className="tp-benefit-card__icon-box">
+                      <i className={`bi ${table.icon}`} />
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Curriculum Grid — 2-col: left stacks Core Basics + Practical, right has full Specialization */}
-            <div className="tp-curriculum-grid">
-
-              {/* Left column: Core Basics stacked on top of Practical */}
-              <div className="tp-curriculum-col">
-                <div className="tp-curriculum-card">
-                  <div className="tp-curriculum-card__header">
-                    <i className="bi bi-journal-bookmark-fill" />
-                    <h4>Core Basics</h4>
+                    <h4 className="tp-benefit-card__title">{table.title}</h4>
                   </div>
-                  <ul>
-                    {activeProgram.coreBasics.map((item, i) => (
-                      <li key={i}><i className="bi bi-check-circle-fill" />{item}</li>
-                    ))}
-                  </ul>
+                  <p className="tp-benefit-card__summary">{table.summary}</p>
                 </div>
-
-                <div className="tp-curriculum-card">
-                  <div className="tp-curriculum-card__header">
-                    <i className="bi bi-tools" />
-                    <h4>Practical / Hands-on Exposure</h4>
-                  </div>
-                  <ul>
-                    {activeProgram.handsOn.map((item, i) => (
-                      <li key={i}><i className="bi bi-check-circle-fill" />{item}</li>
-                    ))}
-                  </ul>
+                
+                <div className="tp-benefit-card__table-wrapper">
+                  <table className="tp-benefit-table">
+                    <thead>
+                      <tr>
+                        <th>Focus Area</th>
+                        <th>Key Advantage & Outcome</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {table.rows.map((row, idx) => (
+                        <tr key={idx}>
+                          <td className="tp-benefit-table__focus">
+                            <span className="tp-focus-pill">
+                              <i className="bi bi-check2-circle" />
+                              <strong>{row.area}</strong>
+                            </span>
+                          </td>
+                          <td className="tp-benefit-table__detail">
+                            {row.detail}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
-              </div>
-
-              {/* Right column: Full Embedded Specialization */}
-              <div className="tp-curriculum-card">
-                <div className="tp-curriculum-card__header">
-                  <i className="bi bi-cpu-fill" />
-                  <h4>Embedded Specialization</h4>
-                </div>
-                <ul>
-                  {activeProgram.specialization.map((item, i) => (
-                    <li key={i}><i className="bi bi-check-circle-fill" />{item}</li>
-                  ))}
-                </ul>
-              </div>
-
-            </div>
-
-            {/* Platforms & Domains */}
-            <div className="tp-tags-row">
-              <div className="tp-tags-group">
-                <h5><i className="bi bi-motherboard" /> Processors / Platforms</h5>
-                <div className="tp-tags">
-                  {activeProgram.processors.map((p, i) => (
-                    <span className="tp-tag" key={i}>{p}</span>
-                  ))}
-                </div>
-              </div>
-              <div className="tp-tags-group">
-                <h5><i className="bi bi-grid-3x3-gap" /> Industry Domains</h5>
-                <div className="tp-tags">
-                  {activeProgram.domains.map((d, i) => (
-                    <span className="tp-tag tp-tag--domain" key={i}>{d}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* ═══════════════════ WHY CHOOSE US ═══════════════════ */}
-      <section className="tp-why" data-animate>
-        <div className="container">
-          <div className="tp-section-header">
-            <span className="tp-section-tag">WHY MICROSYSLOGIC</span>
-            <h2 className="tp-section-title">Why Train With <span>Industry Experts</span></h2>
-          </div>
-          <div className="tp-why__grid">
-            {[
-              { icon: 'bi-award-fill', title: '25+ Years Expertise', desc: 'Learn from engineers who have built real products deployed across defense, automotive, and industrial sectors worldwide.' },
-              { icon: 'bi-motherboard', title: 'Real Hardware Labs', desc: 'Train on actual STM32, ESP32, and industrial SoC boards — not simulators. Every session includes hands-on hardware work.' },
-              { icon: 'bi-building', title: 'Industry Partnerships', desc: 'Direct placement pipelines with companies seeking skilled embedded engineers. We train for specific customer requirements.' },
-              { icon: 'bi-shield-check', title: 'Certified Program', desc: 'Receive MicroSysLogic certification recognized by embedded product companies for direct engineer placements.' },
-              { icon: 'bi-diagram-3-fill', title: 'End-to-End Coverage', desc: 'From bare-metal C to RTOS, from hardware interfaces to cloud IoT — covering the entire embedded product lifecycle.' },
-              { icon: 'bi-people-fill', title: 'Small Batch Sizes', desc: 'Focused learning with limited batch sizes ensuring personal attention and thorough understanding of every concept.' },
-            ].map((item, i) => (
-              <div className="tp-why__card" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
-                <div className="tp-why__card-icon"><i className={`bi ${item.icon}`} /></div>
-                <h4>{item.title}</h4>
-                <p>{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════ CTA SECTION ═══════════════════ */}
+      {/* ═══════════════════ 6 TRAINING PROGRAMS GRID ═══════════════════ */}
+      <section className="tp-programs-section" id="programs-grid">
+        <div className="container">
+          <div className="tp-section-header">
+            <span className="tp-section-tag">
+              <i className="bi bi-cpu-fill" style={{ marginRight: '6px' }} /> 6 SPECIALIZED PROGRAMS
+            </span>
+            <h2 className="tp-section-title">
+              Our 6 Industry <span>Training Programs</span>
+            </h2>
+            <p className="tp-section-desc">
+              Carefully engineered modules for colleges, universities, and corporate R&D teams.
+              <br />
+              <strong>Click on any card below</strong> to view complete syllabus hours, practical sessions, and learning outcomes.
+            </p>
+          </div>
+
+          {/* DYNAMIC RESPONSIVE GRID: 3x2 Desktop, 2x3 Tablet, 1x6 Mobile */}
+          <div className="tp-programs-grid">
+            {TRAINING_PROGRAMS.map((program) => (
+              <div 
+                className="tp-program-card" 
+                key={program.id}
+                onClick={() => navigate(`/training-programs/${program.slug}`)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter') navigate(`/training-programs/${program.slug}`); }}
+              >
+                {/* Card Media Header */}
+                <div className="tp-program-card__media">
+                  <img 
+                    src={program.image} 
+                    alt={program.title} 
+                    className="tp-program-card__img"
+                    loading="lazy"
+                  />
+                  <div className="tp-program-card__badges">
+                    <span className="tp-program-card__number-badge">
+                      PROGRAM {program.number}
+                    </span>
+                    <span className="tp-program-card__duration-badge">
+                      <i className="bi bi-clock-fill" /> {program.duration}
+                    </span>
+                  </div>
+                  <div className="tp-program-card__media-overlay">
+                    <span className="tp-program-card__hardware-chip">
+                      <i className="bi bi-motherboard" /> {program.hardware}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card Content Body */}
+                <div className="tp-program-card__body">
+                  <div className="tp-program-card__sub-badge">
+                    {program.badge}
+                  </div>
+
+                  <h3 className="tp-program-card__title">
+                    {program.title}
+                  </h3>
+
+                  <div className="tp-program-card__hours-tag">
+                    <span className="tp-hours-pill">
+                      <i className="bi bi-journal-text" /> Theory: {program.theoryHours}
+                    </span>
+                    <span className="tp-hours-pill tp-hours-pill--lab">
+                      <i className="bi bi-tools" /> Lab: {program.practicalHours}
+                    </span>
+                  </div>
+
+                  <p className="tp-program-card__desc">
+                    {program.summary}
+                  </p>
+
+                  {/* Highlights Bullet List */}
+                  <ul className="tp-program-card__highlights">
+                    {program.highlights.slice(0, 3).map((item, idx) => (
+                      <li key={idx}>
+                        <i className={`bi ${item.icon}`} />
+                        <span><strong>{item.title}:</strong> {item.desc.slice(0, 75)}...</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Card Action Link */}
+                  <div className="tp-program-card__footer">
+                    <span className="tp-program-card__link">
+                      <span>Explore Full Syllabus & Outcomes</span>
+                      <i className="bi bi-arrow-right" />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ HOW OUR TRAINING DIFFERS (SLIDE 8) ═══════════════════ */}
+      <section className="tp-differs-section" id="differentiation">
+        <div className="container">
+          <div className="tp-section-header">
+            <span className="tp-section-tag">
+              <i className="bi bi-award-fill" style={{ marginRight: '6px' }} /> VALUE PROPOSITION
+            </span>
+            <h2 className="tp-section-title">
+              How Our Training <span>Differs</span>
+            </h2>
+            <p className="tp-section-desc">
+              MicroSysLogic develops mission-critical products for Defense and industrial sectors. We bring genuine product engineering methodologies into every training session.
+            </p>
+          </div>
+
+          <div className="tp-differs-grid">
+            {TRAINING_DIFFERENTIATORS.map((diff, idx) => (
+              <div className="tp-differs-card" key={idx}>
+                <div className="tp-differs-card__icon">
+                  <i className={`bi ${diff.icon}`} />
+                </div>
+                <div className="tp-differs-card__content">
+                  <h4>{diff.title}</h4>
+                  <p>{diff.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ TRAINER SPOTLIGHT SECTION ═══════════════════ */}
+      <section className="tp-trainer-section">
+        <div className="container">
+          <div className="tp-trainer-card">
+            <div className="tp-trainer-card__grid">
+              <div className="tp-trainer-card__left">
+                <span className="tp-section-tag" style={{ background: 'rgba(226,49,63,0.1)', color: '#E2313F' }}>
+                  LEAD INSTRUCTOR & ARCHITECT
+                </span>
+                <h3 className="tp-trainer-card__title">Vijay Veera</h3>
+                <div className="tp-trainer-card__exp">
+                  28+ Years of Tier-1 Industrial Engineering Experience
+                </div>
+                <p className="tp-trainer-card__desc">
+                  With over 28 years designing high-reliability hardware and embedded software architectures for global semiconductor leaders and defense organizations, Vijay brings unprecedented practical depth to every program.
+                </p>
+                <div className="tp-trainer-card__companies">
+                  <div className="tp-comp-pill"><i className="bi bi-check2" /> Qualcomm</div>
+                  <div className="tp-comp-pill"><i className="bi bi-check2" /> Xilinx</div>
+                  <div className="tp-comp-pill"><i className="bi bi-check2" /> Broadcom</div>
+                  <div className="tp-comp-pill"><i className="bi bi-check2" /> Texas Instruments</div>
+                </div>
+              </div>
+
+              <div className="tp-trainer-card__right">
+                <div className="tp-trainer-contact-box">
+                  <h4>Get in Touch Directly</h4>
+                  <p>Have questions about batch schedules, institutional MoUs, or corporate customization?</p>
+                  
+                  <div className="tp-contact-list">
+                    <a href={`tel:${TRAINER_CONTACT.phoneRaw}`} className="tp-contact-row">
+                      <div className="tp-contact-icon"><i className="bi bi-telephone-fill" /></div>
+                      <div>
+                        <small>Direct Phone</small>
+                        <strong>{TRAINER_CONTACT.phone}</strong>
+                      </div>
+                    </a>
+                    <a href={`mailto:${TRAINER_CONTACT.email}`} className="tp-contact-row">
+                      <div className="tp-contact-icon"><i className="bi bi-envelope-fill" /></div>
+                      <div>
+                        <small>Direct Email</small>
+                        <strong>{TRAINER_CONTACT.email}</strong>
+                      </div>
+                    </a>
+                  </div>
+
+                  <Link to="/contact" className="tp-btn tp-btn--primary" style={{ width: '100%', justifyContent: 'center', marginTop: '16px' }}>
+                    <i className="bi bi-envelope" /> Submit Inquiry Online
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ BOTTOM CTA SECTION ═══════════════════ */}
       <section className="tp-cta">
         <div className="container">
           <div className="tp-cta__inner">
             <div className="tp-cta__content">
-              <h2>Ready to Launch Your<br /><span>Embedded Career?</span></h2>
-              <p>Join our next batch and gain industry-ready skills with hands-on hardware experience. Limited seats available per batch.</p>
+              <h2>Ready to Transform Your<br /><span>Engineering Skills?</span></h2>
+              <p>
+                Join our next batch of 6 specialized programs with hands-on lab boards, real register-level coding, and direct mentorship from industry veterans. Limited seats per batch for personalized attention.
+              </p>
               <div className="tp-cta__buttons">
                 <Link to="/contact" className="tp-btn tp-btn--primary tp-btn--lg">
                   <i className="bi bi-envelope-fill" /> Contact Us for Enrollment
                 </Link>
-                <a href="tel:+919876543210" className="tp-btn tp-btn--glass tp-btn--lg">
-                  <i className="bi bi-telephone-fill" /> Call for Details
+                <a href={`tel:${TRAINER_CONTACT.phoneRaw}`} className="tp-btn tp-btn--glass tp-btn--lg">
+                  <i className="bi bi-telephone-fill" /> Call: {TRAINER_CONTACT.phone}
                 </a>
               </div>
             </div>
@@ -386,14 +500,14 @@ const TrainingPrograms = () => {
               <div className="tp-cta__circle">
                 <div className="tp-cta__circle-inner">
                   <i className="bi bi-mortarboard-fill" />
-                  <span>Enroll<br/>Now</span>
+                  <span>Enroll<br />Now</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

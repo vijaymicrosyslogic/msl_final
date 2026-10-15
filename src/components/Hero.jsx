@@ -345,7 +345,7 @@ const Hero = () => {
                     <span>Zone Access Control</span>
                   </div>
                   <div className="hero-buttons">
-                    <Link to="/products/customization/rfid" className="hero-btn primary-btn">Explore</Link>
+                    <Link to="/products/manufacturing/rfid" className="hero-btn primary-btn">Explore</Link>
                     <Link to="/contact" className="hero-btn secondary-btn">Request Demo</Link>
                   </div>
                 </div>

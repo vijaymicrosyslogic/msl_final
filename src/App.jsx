@@ -11,9 +11,9 @@ import AiSolutions from './pages/AiSolutions';
 import Defense from './pages/Defense';
 import RenewableEnergy from './pages/RenewableEnergy';
 import SmartHospitals from './pages/SmartHospitals';
-import Customization from './pages/Customization';
 import Contact from './pages/Contact';
 import TrainingPrograms from './pages/TrainingPrograms';
+import TrainingProgramDetail from './pages/TrainingProgramDetail';
 
 function App() {
   return (
@@ -24,7 +24,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         
-        {/* Products */}
+        {/* Automations (formerly Manufacturing) */}
+        <Route path="/products/automations" element={<Manufacturing />} />
+        <Route path="/products/automations/:productId" element={<Manufacturing />} />
         <Route path="/products/manufacturing" element={<Manufacturing />} />
         <Route path="/products/manufacturing/:productId" element={<Manufacturing />} />
         {/* AI Solutions */}
@@ -43,10 +45,6 @@ function App() {
         <Route path="/products/hospitals" element={<SmartHospitals />} />
         <Route path="/products/hospitals/:productId" element={<SmartHospitals />} />
         
-        {/* Customization */}
-        <Route path="/products/customization" element={<Customization />} />
-        <Route path="/products/customization/:productId" element={<Customization />} />
-        
         <Route path="/products" element={<Placeholder title="Products" />} />
         <Route path="/products/:slug" element={<Placeholder title="Product Details" />} />
         
@@ -54,8 +52,11 @@ function App() {
         <Route path="/services" element={<Placeholder title="Services" />} />
         <Route path="/services/:slug" element={<Placeholder title="Service Details" />} />
         
+        {/* Training Programs */}
         <Route path="/training-programs" element={<TrainingPrograms />} />
-        <Route path="/training" element={<Placeholder title="Training" />} />
+        <Route path="/training-programs/:programId" element={<TrainingProgramDetail />} />
+        <Route path="/training" element={<TrainingPrograms />} />
+        <Route path="/training/:programId" element={<TrainingProgramDetail />} />
         <Route path="/career" element={<Placeholder title="Career" />} />
         <Route path="/contact" element={<Contact />} />
         
