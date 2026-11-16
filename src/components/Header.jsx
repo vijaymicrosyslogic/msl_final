@@ -308,7 +308,10 @@ const Header = () => {
               </div>
             </div>
 
-            <Link to="/training-programs">Training Programs</Link>
+            <Link
+              to="/training-programs"
+              onClick={() => { if (location.pathname === '/training-programs') window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            >Training Programs</Link>
           </div>
 
           {/* Actions on the Right */}
@@ -506,7 +509,10 @@ const Header = () => {
             <Link 
               to="/training-programs" 
               className={`drawer-program-card ${location.pathname.startsWith('/training') ? 'active' : ''}`}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                if (location.pathname === '/training-programs') window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
             >
               <div className="program-card-left">
                 <span className="program-badge-icon">
