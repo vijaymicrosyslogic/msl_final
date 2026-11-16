@@ -1,10 +1,11 @@
-import React from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { TRAINING_PROGRAMS, TRAINING_DIFFERENTIATORS, TRAINER_CONTACT } from '../data/trainingData';
+import { TRAINING_PROGRAMS, TRAINING_DIFFERENTIATORS, TRAINER_CONTACT, CAMPUS_INCUBATION_DATA } from '../data/trainingData';
 import './TrainingPrograms.css';
 
 const TrainingPrograms = () => {
   const navigate = useNavigate();
+  const [activePillarTab, setActivePillarTab] = useState('all');
 
   const benefitsTables = [
     {
@@ -140,8 +141,8 @@ const TrainingPrograms = () => {
                 <span>SKILL DEVELOPMENT & INDUSTRIAL TRAINING</span>
               </div>
               <h1 className="tp-hero__title">
-                Industrial Embedded &<br />
-                <span>Advanced Tech</span> Training
+                Industrial Embedded <span>IoT & AI</span><br />
+                <span>Advanced Tech</span> Training <span>on Edge Devices</span>
               </h1>
               <p className="tp-hero__subtitle">
                 6 specialized, hands-on training programs spanning <strong>Advanced Embedded IoT, Cloud IoT, Wireless RF, FreeRTOS, Raspberry Pi SoC & AMD Xilinx Zynq FPGA</strong> — designed and taught by industry architects with <strong>28+ years</strong> of product development experience.
@@ -387,6 +388,172 @@ const TrainingPrograms = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ CAMPUS INDUSTRIAL INCUBATION CENTRES & INNOVATION LABS ═══════════════════ */}
+      <section className="tp-incubation-section" id="incubation-centres">
+        <div className="container">
+          {/* Section Header with Signature MSL Gradient Accents */}
+          <div className="tp-section-header text-center">
+            <span className="tp-section-tag">
+              <i className="bi bi-buildings-fill" style={{ marginRight: '6px' }} /> {CAMPUS_INCUBATION_DATA.badge}
+            </span>
+            <h2 className="tp-section-title">
+              Turnkey Industrial <span>Incubation Centres</span> & <span>Innovation Labs</span>
+            </h2>
+            <p className="tp-section-desc">
+              Transforming engineering campuses into high-velocity product development hubs. MicroSysLogic builds complete innovation labs, engineers custom syllabus-aligned hardware, and conducts expert-led training to produce industry-ready graduates and student startups.
+            </p>
+          </div>
+
+          {/* Dynamic Overview Showcase Hero Banner (Dark Navy with Brand Red Accents) */}
+          <div className="tp-inc-hero-banner">
+            <div className="tp-inc-hero-banner__bg-glow" />
+            <div className="tp-inc-hero-banner__content">
+              <div className="tp-inc-hero-banner__top">
+                <span className="tp-inc-hero-pill">
+                  <i className="bi bi-stars" /> COMPREHENSIVE CAMPUS LAB ECOSYSTEM
+                </span>
+                <span className="tp-inc-hero-tag">INSTITUTIONAL PARTNERSHIP MODEL</span>
+              </div>
+              
+              <h3 className="tp-inc-hero-banner__headline">
+                Creating World-Class <span>Industrial Incubation Centres</span> for Engineering Colleges & Universities
+              </h3>
+              
+              <blockquote className="tp-inc-hero-banner__tagline">
+                {CAMPUS_INCUBATION_DATA.tagline}
+              </blockquote>
+
+              <p className="tp-inc-hero-banner__desc">
+                {CAMPUS_INCUBATION_DATA.summary}
+              </p>
+
+              {/* 4 Key Stat Metrics */}
+              <div className="tp-inc-metrics-grid">
+                {CAMPUS_INCUBATION_DATA.metrics.map((m, mIdx) => (
+                  <div className="tp-inc-metric-card" key={mIdx}>
+                    <div className="tp-inc-metric-card__icon">
+                      <i className={`bi ${m.icon}`} />
+                    </div>
+                    <div className="tp-inc-metric-card__text">
+                      <div className="tp-inc-metric-card__val">{m.value}</div>
+                      <div className="tp-inc-metric-card__lbl">{m.label}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="tp-inc-hero-banner__actions">
+                <Link to="/contact" className="tp-btn tp-btn--primary tp-btn--lg">
+                  <i className="bi bi-file-earmark-text-fill" /> Partner for College Incubation MoU
+                </Link>
+                <a href={`tel:${TRAINER_CONTACT.phoneRaw}`} className="tp-btn tp-btn--glass tp-btn--lg">
+                  <i className="bi bi-telephone-fill" /> Call Direct: {TRAINER_CONTACT.phone}
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          {/* 4 Execution Pillars Grid (Pure UI / No Photos) */}
+          <div className="tp-inc-pillars-grid">
+            {CAMPUS_INCUBATION_DATA.pillars
+              .filter((pillar) => activePillarTab === 'all' || activePillarTab === pillar.id.toString())
+              .map((pillar) => (
+              <div className={`tp-inc-pillar-card ${pillar.themeClass}`} key={pillar.id}>
+                {/* Pillar Header with Step Badge, Tag, and Icon */}
+                <div className="tp-inc-pillar-card__top">
+                  <div className="tp-inc-pillar-card__header-left">
+                    <span className="tp-inc-pillar-card__step-badge">{pillar.step}</span>
+                    <span className="tp-inc-pillar-card__tag-pill">{pillar.tag}</span>
+                  </div>
+                  <div className="tp-inc-pillar-card__icon-box">
+                    <i className={`bi ${pillar.icon}`} />
+                  </div>
+                </div>
+
+                {/* Pillar Title & Target Subtitle */}
+                <div className="tp-inc-pillar-card__title-section">
+                  <h4 className="tp-inc-pillar-card__title">{pillar.title}</h4>
+                  <div className="tp-inc-pillar-card__target">{pillar.target}</div>
+                  <p className="tp-inc-pillar-card__desc">{pillar.desc}</p>
+                </div>
+
+                {/* Feature Chips */}
+                <div className="tp-inc-pillar-card__chips">
+                  {pillar.chips.map((chip, cIdx) => (
+                    <span className="tp-inc-chip" key={cIdx}>
+                      <i className="bi bi-check2" /> {chip}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Bullet Points with Clean Icons */}
+                <ul className="tp-inc-pillar-card__points">
+                  {pillar.points.map((pt, pIdx) => (
+                    <li key={pIdx}>
+                      <div className="tp-inc-point-icon">
+                        <i className={`bi ${pt.icon}`} />
+                      </div>
+                      <span className="tp-inc-point-text">{pt.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Process Flow / Key Takeaway Bar */}
+          <div className="tp-inc-takeaway-bar">
+            <div className="tp-inc-takeaway-label">
+              <span className="tp-inc-takeaway-badge">KEY TAKEAWAY</span>
+              <p>End-to-End Pipeline</p>
+            </div>
+
+            <div className="tp-inc-takeaway-flow">
+              {CAMPUS_INCUBATION_DATA.takeawaySteps.map((step, sIdx) => (
+                <div className="tp-inc-flow-step" key={sIdx} style={{ '--step-color': step.color }}>
+                  <span className="tp-inc-flow-step__num">{step.step}</span>
+                  <i className={`bi ${step.icon} tp-inc-flow-step__icon`} />
+                  <span className="tp-inc-flow-step__title">{step.title}</span>
+                  {sIdx < CAMPUS_INCUBATION_DATA.takeawaySteps.length - 1 && (
+                    <i className="bi bi-chevron-right tp-inc-flow-chevron" />
+                  )}
+                </div>
+              ))}
+
+              <div className="tp-inc-flow-goal">
+                <i className="bi bi-trophy-fill" />
+                <span>{CAMPUS_INCUBATION_DATA.takeawayGoal}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Institutional Collaboration CTA Card */}
+          <div className="tp-inc-collab-cta">
+            <div className="tp-inc-collab-cta__content">
+              <div className="tp-inc-collab-cta__icon">
+                <i className="bi bi-mortarboard-fill" />
+              </div>
+              <div>
+                <h4>Establish an Industrial Incubation Centre at Your Institution</h4>
+                <p>
+                  Partner with MicroSysLogic to build customized labs, deploy physical test benches, manufacture custom hardware kits, and mentor faculty and students.
+                </p>
+              </div>
+            </div>
+            <div className="tp-inc-collab-cta__actions">
+              <Link to="/contact" className="tp-btn tp-btn--primary tp-btn--lg">
+                <i className="bi bi-envelope-check-fill" /> Enquire for College MoU
+              </Link>
+              <a href={`tel:${TRAINER_CONTACT.phoneRaw}`} className="tp-btn tp-btn--glass-dark tp-btn--lg">
+                <i className="bi bi-telephone-fill" /> Call: {TRAINER_CONTACT.phone}
+              </a>
+            </div>
           </div>
         </div>
       </section>

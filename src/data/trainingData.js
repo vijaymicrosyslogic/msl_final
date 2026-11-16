@@ -206,7 +206,7 @@ export const TRAINING_PROGRAMS = [
     id: 'program-5',
     slug: 'raspberry-pi-python-camera',
     number: '05',
-    title: 'Raspberry Pi (SoC) with Python & Camera Systems',
+    title: 'Raspberry Pi (SoC) with Python, AI & Camera Systems',
     badge: 'SOC & COMPUTER VISION',
     subtitle: 'Embedded Linux, Sensor Interfacing & Camera Computer Vision on Raspberry Pi',
     duration: '20 Hours',
@@ -349,3 +349,98 @@ export const TRAINER_CONTACT = {
   email: 'vijayv@microsyslogic.com',
   website: 'www.microsyslogic.com'
 };
+
+export const CAMPUS_INCUBATION_DATA = {
+  badge: 'CAMPUS INNOVATION & INCUBATION',
+  title: 'Turnkey Industrial Incubation Centres & Innovation Labs',
+  tagline: '“Empowering Students to Innovate, Build and Transform Ideas into Real-World Solutions”',
+  summary: 'MicroSysLogic partners with engineering colleges and universities to establish on-campus, industry-grade innovation labs and incubation centres. From physical workbench infrastructure and custom syllabus-aligned hardware boards to step-by-step lab curricula and hands-on mentorship — we provide a complete, turnkey ecosystem.',
+  metrics: [
+    { value: 'Turnkey', label: 'Lab Infrastructure & Toolchains', icon: 'bi-tools' },
+    { value: 'Custom HW', label: 'Tailored Boards per Curriculum', icon: 'bi-cpu-fill' },
+    { value: '28+ Years', label: 'Tier-1 Industry Architect Mentorship', icon: 'bi-award-fill' },
+    { value: 'Startup Ready', label: 'Student Prototype & IP Incubation', icon: 'bi-rocket-takeoff-fill' }
+  ],
+  pillars: [
+    {
+      id: 1,
+      step: '01',
+      title: 'Building New Innovation Lab',
+      target: 'for Engineering Students',
+      themeColor: '#0284c7',
+      themeClass: 'tp-inc-card--blue',
+      icon: 'bi-tools',
+      tag: 'INFRASTRUCTURE & LAB SETUP',
+      desc: 'Complete turnkey setup of state-of-the-art campus innovation labs equipped with commercial product engineering tools.',
+      points: [
+        { icon: 'bi-gear-wide-connected', text: 'Setup state-of-the-art innovation lab infrastructure with modern ergonomic test benches.' },
+        { icon: 'bi-display', text: 'Industry-grade tools, development platforms, debuggers, and test instrumentation.' },
+        { icon: 'bi-lightbulb-fill', text: 'Hands-on environment for real-world product engineering and hardware bring-up.' },
+        { icon: 'bi-rocket-takeoff-fill', text: 'Dedicated space for advanced research, patentable prototypes, and student startups.' }
+      ],
+      chips: ['Hardware Workbenches', 'Logic Analyzers', 'JTAG / SWD Debuggers', 'SMD Test Equipment']
+    },
+    {
+      id: 2,
+      step: '02',
+      title: 'Providing Lab Programs',
+      target: 'to Engineering Students',
+      themeColor: '#ea580c',
+      themeClass: 'tp-inc-card--orange',
+      icon: 'bi-book-half',
+      tag: 'STRUCTURED EXPERIMENTS',
+      desc: 'Industry-crafted laboratory curricula with step-by-step practical experiments mapped to semester timelines.',
+      points: [
+        { icon: 'bi-clipboard-check-fill', text: 'Structured lab programs with step-by-step experiments and practical rubrics.' },
+        { icon: 'bi-cpu-fill', text: 'Covers Embedded Systems, Cloud IoT, Edge AI, Robotics, Wireless RF, & FPGA SoC.' },
+        { icon: 'bi-person-badge-fill', text: 'Guided by senior industry architects with 28+ years of commercial design experience.' },
+        { icon: 'bi-mortarboard-fill', text: 'Seamlessly aligns with academic curriculum while bridging beyond-syllabus market skills.' }
+      ],
+      chips: ['Embedded C', 'Cloud IoT', 'FreeRTOS', 'Wireless RF', 'Edge AI', 'Zynq FPGA']
+    },
+    {
+      id: 3,
+      step: '03',
+      title: 'Designing Customized Hardware',
+      target: 'as per Lab Programs',
+      themeColor: '#059669',
+      themeClass: 'tp-inc-card--green',
+      icon: 'bi-motherboard-fill',
+      tag: 'TAILORED HARDWARE KITS',
+      desc: 'MicroSysLogic designs and manufactures custom evaluation & development boards specifically for your college courses.',
+      points: [
+        { icon: 'bi-cpu', text: 'Custom hardware boards designed specifically for student lab experiments.' },
+        { icon: 'bi-plug-fill', text: 'Supports multiple interfaces: GPIO, I2C, SPI, UART, ADC, DAC, CAN, LIN, Ethernet, USB.' },
+        { icon: 'bi-shield-check', text: 'Reliable, student-friendly, and cost-effective designs with onboard protection.' },
+        { icon: 'bi-file-code-fill', text: 'Complete production schematics, bill of materials, documentation, and open-source starter code.' }
+      ],
+      chips: ['STM32 Cortex-M4', 'CAN & LIN Buses', 'Ethernet PHY', 'Sensor Modules', 'Open Schematics']
+    },
+    {
+      id: 4,
+      step: '04',
+      title: 'Special Advanced Training Programs',
+      target: 'for Startup & Industry Readiness',
+      themeColor: '#E2313F',
+      themeClass: 'tp-inc-card--red',
+      icon: 'bi-award-fill',
+      tag: 'ADVANCED MENTORSHIP',
+      desc: 'High-impact specialized training led by senior corporate architects to build tier-1 placement confidence and entrepreneurship.',
+      points: [
+        { icon: 'bi-graph-up-arrow', text: 'Advanced hands-on training on emerging technologies (Edge AI, RTOS, Cloud IoT, and Zynq FPGA).' },
+        { icon: 'bi-person-video3', text: 'Expert-led sessions delivered by senior industry professionals with tier-1 semiconductor pedigree.' },
+        { icon: 'bi-file-earmark-code-fill', text: 'Real industry tools, development processes, and production best practices.' },
+        { icon: 'bi-briefcase-fill', text: 'Project-based learning for real-world applications, improving student employability and startup readiness.' }
+      ],
+      chips: ['Industry Best Practices', 'Register-Level Debugging', 'Startup Incubator', 'Tier-1 Placements']
+    }
+  ],
+  takeawaySteps: [
+    { title: 'Innovation Lab Infrastructure', color: '#0284c7', step: '01', icon: 'bi-tools' },
+    { title: 'Lab Programs for Students', color: '#ea580c', step: '02', icon: 'bi-book-half' },
+    { title: 'Customized Hardware Designs', color: '#059669', step: '03', icon: 'bi-motherboard-fill' },
+    { title: 'Advanced Training Programs', color: '#E2313F', step: '04', icon: 'bi-award-fill' }
+  ],
+  takeawayGoal: 'Industry-Ready Engineers & Student Startups'
+};
+
